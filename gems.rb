@@ -11,6 +11,7 @@ gem "puma", "~> 3.11"
 gem "webpacker"
 
 group :development, :test do
+  gem "pry-rails"
   gem "pry-byebug", require: false
 end
 
