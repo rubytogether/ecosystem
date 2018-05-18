@@ -2,7 +2,9 @@
   "name": "ecosystem",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.5"
+    "@rails/webpacker": "3.5",
+    "chart.js": "^2.7.2",
+    "chartkick": "^2.3.5"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
