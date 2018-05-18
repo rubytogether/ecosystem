@@ -21,3 +21,5 @@ group :development do
 end
 
 gem "chartkick", "~> 2.3"
+
+gem "rspec-rails", "~> 3.7"
