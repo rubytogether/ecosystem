@@ -1,0 +1,2 @@
+#!/bin/sh
+HEROKU_APP=rt-ecosystem exec "${HEROKU_COMMAND:-heroku}" "$@"
