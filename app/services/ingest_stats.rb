@@ -1,5 +1,3 @@
-require "json"
-
 class IngestStats
   def self.run(json)
     data = JSON.parse(json)
@@ -16,7 +14,7 @@ class IngestStats
         data.fetch("stats").each do |time, name_map|
           name_map.each do |name, value_map|
             value_map.each do |value, count|
-              t.add(hour: time, key: name, value: value, count: count)
+              t.add(date: time, key: name, value: value, count: count)
             end
           end
         end
