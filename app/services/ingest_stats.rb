@@ -1,7 +1,9 @@
 class IngestStats
-  def self.run(json)
-    data = JSON.parse(json)
+  def self.from_file(filename)
+    self.run JSON.parse File.read(filename)
+  end
 
+  def self.run(data)
     ParsedLog.transaction do
 
       ParsedLog.bulk_insert do |t|

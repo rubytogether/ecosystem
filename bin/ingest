@@ -3,4 +3,6 @@
 require_relative "../config/environment"
 require_relative "../app/services/ingest_stats"
 
-IngestStats.run ARGF.read
+ARGV.each do |filename|
+  IngestStats.from_file filename
+end
