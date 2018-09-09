@@ -5,8 +5,6 @@ class CreateStats < ActiveRecord::Migration[5.2]
       t.string :key
       t.string :value
       t.integer :count
-
-      t.timestamps
     end
   end
 end
