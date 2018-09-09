@@ -6,20 +6,18 @@ ruby Pathname.new(".ruby-version").expand_path(__dir__).read
 gem "rails", "~> 5.2.0"
 
 gem "bootsnap", ">= 1.1.0", require: false
+gem "chartkick", "~> 2.3"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 3.11"
-gem "webpacker"
+gem "webpacker", "~> 3.5"
 
 group :development, :test do
-  gem "pry-rails"
   gem "pry-byebug", require: false
+  gem "pry-rails", "~> 0.3.6"
+  gem "rspec-rails", "~> 3.7"
 end
 
 group :development do
   gem "web-console", ">= 3.3.0"
   gem "listen", ">= 3.0.5", "< 3.2"
 end
-
-gem "chartkick", "~> 2.3"
-
-gem "rspec-rails", "~> 3.7"
