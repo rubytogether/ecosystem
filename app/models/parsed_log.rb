@@ -1,0 +1,2 @@
+class ParsedLog < ApplicationRecord
+end
