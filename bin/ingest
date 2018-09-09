@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require_relative "../config/environment"
+require_relative "../app/services/ingest_stats"
+
+IngestStats.run ARGF.read
