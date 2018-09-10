@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  get "stats/:id" => "stats#show"
+  root "home#index"
 end

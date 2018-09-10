@@ -50,7 +50,6 @@ GEM
     bulk_insert (1.7.0)
       activerecord (>= 3.2.0)
     byebug (10.0.2)
-    chartkick (2.3.4)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
@@ -173,7 +172,6 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   bulk_insert (~> 1.7)
-  chartkick (~> 2.3)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   pry-byebug

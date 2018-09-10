@@ -1,6 +1,30 @@
 <h1>The Ruby Ecosystem</h1>
-<h3>as of April 1, 2018</h3>
+<h3>as of <%= @latest.to_s(:long) %></h3>
 
-<% @data.each do |datum| %>
-  <%= bar_chart datum, stacked: true, max: 100 %>
+<% @charts.each do |name, key| %>
+  <p><%= h name %>, <%= h key %></p>
+  <%= tag :div, id: "#{key}-graph" %>
 <% end %>
+
+<script>
+  <% @charts.each do |name, key| %>
+    new Rickshaw.Graph.Ajax({
+      element: document.querySelector("#<%= key %>-graph"),
+      height: jQuery(window).height() - 250,
+      renderer: 'area',
+      stroke: true,
+      dataURL: "http://ecosystem.test/stats/<%= CGI.escape(key) %>",
+      onData: (d) => {
+        let palette = new Rickshaw.Color.Palette({
+          scheme: "spectrum14",
+        })
+        d.forEach(s => s.color = palette.color())
+        return d
+      },
+      onComplete: function(transport) {
+        var graph = transport.graph;
+        var detail = new Rickshaw.Graph.HoverDetail({ graph: graph });
+      }
+    });
+  <% end %>
+</script>

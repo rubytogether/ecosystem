@@ -7,7 +7,6 @@ gem "rails", "~> 5.2.0"
 
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bulk_insert", "~> 1.7"
-gem "chartkick", "~> 2.3"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 3.11"
 gem "webpacker", "~> 3.5"

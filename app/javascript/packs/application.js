@@ -1,8 +1,8 @@
 /* eslint no-console:0 */
 import "stylesheets/application.css";
 
-import Chartkick from "chartkick";
-import Chart from "chart.js";
+import Rickshaw from "rickshaw/rickshaw.js";
+import jQuery from "jquery";
 
-window.Chartkick = Chartkick;
-Chartkick.addAdapter(Chart);
+window.jQuery = jQuery;
+window.Rickshaw = Rickshaw;
