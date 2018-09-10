@@ -3,15 +3,22 @@
 
 <% @charts.each do |name, key| %>
   <p><%= h name %>, <%= h key %></p>
-  <%= tag :div, id: "#{key}-graph" %>
+  <%= content_tag :div, id: "#{key}-total" do end %>
+  <%= content_tag :div, id: "#{key}-graph" do end %>
 <% end %>
 
 <script>
   <% @charts.each do |name, key| %>
     new Rickshaw.Graph.Ajax({
+      element: document.querySelector("#<%= key %>-total"),
+      renderer: "bar",
+      dataURL: "http://ecosystem.test/stats/<%= CGI.escape(key) %>?total=true",
+    });
+
+    new Rickshaw.Graph.Ajax({
       element: document.querySelector("#<%= key %>-graph"),
       height: jQuery(window).height() - 250,
-      renderer: 'area',
+      renderer: "area",
       stroke: true,
       dataURL: "http://ecosystem.test/stats/<%= CGI.escape(key) %>",
       onData: (d) => {

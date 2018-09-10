@@ -1,6 +1,15 @@
 class StatsController < ApplicationController
   # We need to get this data into Rickshaw series format
   def show
+    if params[:total]
+      date_totals = Stat.where(key: params.fetch(:id)).group(:date).order(:date).sum(:count)
+      points = date_totals.map do |date, count|
+        { x: date.to_time.to_i, y: count }
+      end
+
+      return render json: [{name: "total", data: points}]
+    end
+
     data = Stat.where(key: params.fetch(:id)).pluck(:date, :value, :count)
 
     dates = data.map(&:first).sort.uniq
