@@ -8,7 +8,9 @@ class StatsController < ApplicationController
 
     # Build a hash of hashes we can use to look up values for a specific date
     count_map = Hash.new{|h, k| h[k] = {} }
+    date_totals = Hash.new(0)
     data.each do |date, version, count|
+      date_totals[date] += count
       count_map[date][version] = count
     end
 
@@ -18,13 +20,14 @@ class StatsController < ApplicationController
     # [ {name: "2.2.2", data: [{x: "2018-07-13", y: 3932}, ...] }, ... ]
     series = versions.map do |version|
       points = dates.map do |date|
+        count = count_map.dig(date, version) || 0
         {
           x: date.to_time.to_i,
-          y: count_map.dig(date, version) || 0
+          y: (count.to_f / date_totals[date]) * 100
         }
       end
 
-      { name: version, data: points }
+      { name: "#{params[:id]} #{version}", data: points }
     end
 
     render json: series
