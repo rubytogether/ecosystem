@@ -4,3 +4,9 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
+
+namespace :stats do
+  task :import do
+    ImportStatsWorker.perform_async
+  end
+end
