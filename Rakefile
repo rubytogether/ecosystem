@@ -6,7 +6,7 @@ require_relative 'config/application'
 Rails.application.load_tasks
 
 namespace :stats do
-  task :import do
+  task :import => :environment do
     ImportStatsWorker.perform_async
   end
 end
