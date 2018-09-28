@@ -23,3 +23,5 @@ group :development do
 end
 
 gem "aws-sdk-s3", "~> 1.20"
+
+gem "sidekiq", "~> 5.2"
