@@ -8,4 +8,4 @@
   - low
 
 production:
-  :concurrency: 25
+  :concurrency: <%= ENV.fetch("RAILS_MAX_THREADS") %>
