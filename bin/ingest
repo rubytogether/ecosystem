@@ -1,8 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative "../config/environment"
-require_relative "../app/services/ingest_stats"
-
-ARGV.each do |filename|
-  IngestStats.from_file filename
-end
