@@ -10,20 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_09_215442) do
+ActiveRecord::Schema.define(version: 2018_09_09_060930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
   create_table "parsed_logs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "filename"
-    t.datetime "parsed_at"
+    t.string "filename", null: false
+    t.datetime "parsed_at", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-# Could not dump table "stats" because of following StandardError
-#   Unknown type 'stats_key' for column 'key'
+  create_table "stats", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.date "date", null: false
+    t.string "key", null: false
+    t.string "value", null: false
+    t.integer "count", default: 0, null: false
+  end
 
 end
