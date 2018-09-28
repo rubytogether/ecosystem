@@ -2,6 +2,8 @@ class ImportStatsFileWorker
   include Sidekiq::Worker
 
   def perform(stats_key)
+    return unless ParsedLog.where(filename: stats_key).count.zero?
+
     s3 = Aws::S3::Client.new
     bucket_name = Rails.application.config.stats.bucket_name
 
@@ -23,8 +25,6 @@ class ImportStatsFileWorker
 
       parsed_at = Time.parse(stats_key[0..22] + "Z")
       ParsedLog.create!(filename: stats_key, parsed_at: parsed_at)
-
-      s3.delete_object(bucket: bucket_name, key: stats_key)
     end
 
     Rails.logger.info "Finished importing #{stats_key}"
