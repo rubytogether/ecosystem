@@ -1,32 +1,17 @@
 class ImportStatsFileWorker
   include Sidekiq::Worker
 
-  def perform(stats_key)
-    return unless ParsedLog.where(filename: stats_key).count.zero?
+  def perform(key)
+    return if ImportStatus.fetched?(key)
 
     s3 = Aws::S3::Client.new
-    bucket_name = Rails.application.config.stats.bucket_name
+    bucket= Rails.application.config.stats.bucket_name
 
-    stats = JSON.parse s3.get_object(
-      bucket: bucket_name,
-      key: stats_key
-    ).body.read
+    body = s3.get_object(bucket: bucket, key: key).body.read
+    json = JSON.parse(body)
+    date, data = json.keys.first, json.values.first
 
-    ActiveRecord::Base.transaction do
-      stats.each do |date, name_values|
-        name_values.each do |name, version_values|
-          version_values.each do |version, count|
-            Stat.where(date: date, key: name, value: version).
-              first_or_create.
-              increment!(:count, count)
-          end
-        end
-      end
-
-      parsed_at = Time.parse(stats_key[0..22] + "Z")
-      ParsedLog.create!(filename: stats_key, parsed_at: parsed_at)
-    end
-
-    Rails.logger.info "Finished importing #{stats_key}"
+    ImportStatus.create!(key: key, date: date, data: data)
+    Rails.logger.info("Downloaded #{key}")
   end
 end
