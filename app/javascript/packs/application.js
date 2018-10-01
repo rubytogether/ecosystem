@@ -1,4 +1,5 @@
 /* eslint no-console:0 */
+import "rickshaw/rickshaw.min.css";
 import "stylesheets/application.css";
 
 import Rickshaw from "rickshaw/rickshaw.js";
