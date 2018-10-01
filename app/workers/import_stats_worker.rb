@@ -20,4 +20,5 @@ class ImportStatsWorker
       'args' => keys.map{|k| [k] }
     )
   end
+
 end
