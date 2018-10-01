@@ -12,7 +12,7 @@
     new Rickshaw.Graph.Ajax({
       element: document.querySelector("#<%= key %>-total"),
       renderer: "bar",
-      dataURL: "http://ecosystem.test/stats/<%= CGI.escape(key) %>?total=true",
+      dataURL: "/stats/<%= CGI.escape(key) %>?total=true",
     });
 
     new Rickshaw.Graph.Ajax({
@@ -20,7 +20,7 @@
       height: jQuery(window).height() - 250,
       renderer: "area",
       stroke: true,
-      dataURL: "http://ecosystem.test/stats/<%= CGI.escape(key) %>",
+      dataURL: "/stats/<%= CGI.escape(key) %>",
       onData: (d) => {
         let palette = new Rickshaw.Color.Palette({
           scheme: "spectrum14",
