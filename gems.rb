@@ -22,7 +22,7 @@ gem "rack"
 
 group :development, :test do
   gem "pry-byebug", require: false
-  gem "pry-rails", "~> 0.3.7"
+  gem "pry-rails", "~> 0.3.8"
   gem "rspec-rails", "~> 3.8"
 end
 
