@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby Pathname.new(".ruby-version").expand_path(__dir__).read
 
-gem "rails", "~> 5.2.1"
+gem "rails", "~> 5.2.2"
 
 gem "aws-sdk-s3", "~> 1.25"
 gem "bootsnap", ">= 1.1.0", require: false
