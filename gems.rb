@@ -11,7 +11,7 @@ gem "bulk_insert", "~> 1.7"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 3.12"
 gem "sidekiq", "~> 5.2"
-gem "webpacker", "~> 3.5"
+gem "webpacker", "~> 4.0"
 
 # Gems in both rubygems.org and gems.contribsys.com
 gem "redis"
