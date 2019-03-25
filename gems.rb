@@ -5,7 +5,7 @@ ruby Pathname.new(".ruby-version").expand_path(__dir__).read
 
 gem "rails", "~> 5.2.2"
 
-gem "aws-sdk-s3", "~> 1.30"
+gem "aws-sdk-s3", "~> 1.35"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bulk_insert", "~> 1.7"
 gem "pg", ">= 0.18", "< 2.0"
