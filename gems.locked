@@ -168,7 +168,7 @@ GEM
       rack (>= 1.5.0)
       rack-protection (>= 1.5.0)
       redis (>= 3.3.5, < 5)
-    sidekiq-pro (4.0.4)
+    sidekiq-pro (4.0.5)
       concurrent-ruby (>= 1.0.5)
       sidekiq (>= 5.2.1)
     sprockets (3.7.2)
