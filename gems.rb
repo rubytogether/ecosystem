@@ -9,7 +9,7 @@ gem "aws-sdk-s3", "~> 1.45"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bulk_insert", "~> 1.7"
 gem "pg", ">= 0.18", "< 2.0"
-gem "puma", "~> 3.12"
+gem "puma", "~> 4.0"
 gem "sidekiq", "~> 5.2"
 gem "webpacker", "~> 4.0"
 
