@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 2019_07_08_173946) do
     t.string "key", null: false
     t.string "value", null: false
     t.integer "count", default: 0, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
