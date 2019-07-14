@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/jamis/bulk_insert.git
+  revision: 3ded6b059af8d239ca0f5fbecca0de6138d49592
+  specs:
+    bulk_insert (1.7.0)
+      activerecord (>= 3.2.0)
+
 GEM
   remote: https://rubygems.org/
   remote: https://gems.contribsys.com/
@@ -64,8 +71,6 @@ GEM
     bootsnap (1.4.4)
       msgpack (~> 1.0)
     builder (3.2.3)
-    bulk_insert (1.7.0)
-      activerecord (>= 3.2.0)
     byebug (11.0.0)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
@@ -203,7 +208,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk-s3 (~> 1.45)
   bootsnap (>= 1.1.0)
-  bulk_insert (~> 1.7)
+  bulk_insert!
   concurrent-ruby
   connection_pool
   listen (>= 3.0.5, < 3.2)

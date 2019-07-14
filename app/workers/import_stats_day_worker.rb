@@ -18,7 +18,7 @@ class ImportStatsDayWorker
     ImportStatus.transaction do
       ImportStatus.where(id: import_status_ids).update_all(imported_at: Time.now)
 
-      Stat.bulk_insert do |t|
+      Stat.bulk_insert(update_duplicates: %w[date key value], ignore: false) do |t|
         stats.each do |name, value_map|
           value_map.each do |value, count|
             t.add(date: date, key: name, value: value, count: count)
