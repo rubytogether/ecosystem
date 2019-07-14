@@ -1,5 +1,5 @@
 <h1>The Ruby Ecosystem</h1>
-<h3>as of <%= @latest.to_s(:long) %></h3>
+<h3>as of <%= (Date.today - 60.day).to_s(:long) %></h3>
 
 <% @charts.each do |name, key| %>
   <p><%= h name %>, <%= h key %></p>

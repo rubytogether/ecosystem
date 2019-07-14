@@ -12,8 +12,5 @@ class HomeController < ApplicationController
       "CI system" => "ci",
       "TLS ciphers" => "tls_ciphers"
     }
-
-    @latest = Stat.order(:date).first.date
   end
-
 end

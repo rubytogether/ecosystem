@@ -6,7 +6,7 @@ class ImportStatsWorker
     bucket_name = Rails.application.config.stats.bucket_name
     prefix = Rails.application.config.stats.prefix
 
-    last_key = ImportStatus.order("key DESC").limit(1).pluck(:key).first
+    last_key = ImportStatus.order('key COLLATE "C" DESC').limit(1).pluck(:key).first
     keys = s3.list_objects_v2(
       bucket: bucket_name,
       prefix: prefix,
@@ -20,5 +20,4 @@ class ImportStatsWorker
       'args' => keys.map{|k| [k] }
     )
   end
-
 end

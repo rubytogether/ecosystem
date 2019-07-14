@@ -1,8 +1,10 @@
 class StatsController < ApplicationController
   # We need to get this data into Rickshaw series format
   def show
+    base_query = Stat.where("key = ? AND date > ?", params.fetch(:id), Date.today - 60.day)
+    date_totals = base_query.group(:date).order(:date).sum(:count)
+
     if params[:total]
-      date_totals = Stat.where(key: params.fetch(:id)).group(:date).order(:date).sum(:count)
       points = date_totals.map do |date, count|
         { x: date.to_time.to_i, y: count }
       end
@@ -10,16 +12,14 @@ class StatsController < ApplicationController
       return render json: [{name: "total", data: points}]
     end
 
-    data = Stat.where(key: params.fetch(:id)).pluck(:date, :value, :count)
+    data = base_query.pluck(:date, :value, :count)
 
     dates = data.map(&:first).sort.uniq
     versions = data.map(&:second).sort.uniq
 
     # Build a hash of hashes we can use to look up values for a specific date
     count_map = Hash.new{|h, k| h[k] = {} }
-    date_totals = Hash.new(0)
     data.each do |date, version, count|
-      date_totals[date] += count
       count_map[date][version] = count
     end
 
@@ -30,9 +30,10 @@ class StatsController < ApplicationController
     series = versions.map do |version|
       points = dates.map do |date|
         count = count_map.dig(date, version) || 0
+        y = (count.to_f / date_totals[date]) * 100
         {
           x: date.to_time.to_i,
-          y: (count.to_f / date_totals[date]) * 100
+          y: y
         }
       end
 
