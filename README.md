@@ -32,6 +32,6 @@ Ecosystem is currently hosted on Heroku at: http://ecosystem.rubytogether.org
 
 ## WIP - Design
 
-Here's what Brendan Miller (designer at Cloud City Development) has come up with so far. We are currently working on building these out:
+Here's what Brendan Miller (designer at Cloud City Development) has come up with so far. We are currently working on building this page out:
 
-
+![alt text](https://raw.githubusercontent.com/rubytogether/ecosystem/sidk/update-readme/readme_images/design.png)
