@@ -6,7 +6,7 @@ We collect metrics from Bundler and rubygems.org and graph them.
 
 To start with, we will graph over time:
 
-* Download counts for Ruby and Bundler, segregated by version.
+* Request counts for Ruby and Bundler, segregated by version.
 * Request counts made from various platforms (eg. Linux, Windows etc)
 * Request counts made from various CI providers (eg. CircleCI, Jenkins etc) 
 
