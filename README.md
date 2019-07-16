@@ -1,24 +1,37 @@
-# README
+# The Ruby Ecosystem
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+We collect metrics from Bundler and rubygems.org and graph them.
 
-Things you may want to cover:
+## What metrics, exactly?
 
-* Ruby version
+To start with, we will graph over time:
 
-* System dependencies
+* Download counts for Ruby and Bundler, segregated by version.
+* Request counts made from various platforms (eg. Linux, Windows etc)
+* Request counts made from various CI providers (eg. CircleCI, Jenkins etc) 
 
-* Configuration
+## Why?
 
-* Database creation
+Apart from being interesting to look at, this information has the potential to help:
 
-* Database initialization
+* Gem authors understand what versions of Ruby they should consider supporting
+* Developers make decisions on if and when they should upgrade their Ruby version
+* The Ruby community as a whole understand better how it is evolving and changing
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## How does it work?
 
-* Deployment instructions
+Running `bundle install` or `gem install` makes requests to rubygems.org to download various gems. These requests also send information to rubygems.org about the current Ruby and/or Bundler version being used, the platform being used and a few other things. This infomation is logged and stored in S3. Kirby (https://github.com/rubytogether/kirby) parses this info (there's a lot of it!) and aggregates it into JSON files. 
 
-* ...
+The Ecosystem app retrieves this JSON information on a daily basis and graphs it.
+
+
+## Where is it?
+
+Ecosystem is currently hosted on Heroku at: http://ecosystem.rubytogether.org
+
+## WIP - Design
+
+Here's what Brendan Miller (designer at Cloud City Development) has come up with so far. We are currently working on building these out:
+
+
