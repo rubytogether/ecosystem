@@ -20,7 +20,7 @@ Rails.application.config.content_security_policy do |policy|
                        :https,
                        "http://localhost:3036",
                        "ws://localhost:3035"
-    policy.style_src :self, :blob
+    policy.style_src :self, :blob, "'unsafe-inline'"
   end
 end
 
