@@ -10,7 +10,7 @@ class HomeController < ApplicationController
       "RubyGems version" => "rubygems",
       "Platform" => "platform",
       "CI system" => "ci",
-      "TLS ciphers" => "tls_ciphers"
+      "TLS ciphers" => "tls_cipher"
     }
   end
 end
