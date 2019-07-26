@@ -14,50 +14,6 @@
 
 <script>
   <% @charts.each do |name, key| %>
-      Rails.ajax({
-        url: "/stats/<%= CGI.escape(key) %>", 
-        type: "get",
-        success: series => {
-          const options = { 
-            stroke: { 
-              width: 2 
-            }, 
-            chart: { 
-              id: "chart-<%= CGI.escape(key) %>",
-              height: 400,
-              animations: { 
-                enabled: false 
-              } 
-            }, 
-            series,
-            yaxis: { 
-              labels: {
-                formatter: value => `${Math.round(Number(value) * 100) / 100}%`
-              }
-            },
-            colors:  ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#2E294E'],
-            dataLabels: { enabled: false },
-            tooltip: { 
-              custom: ({ series, seriesIndex, w: { config: { colors }, globals: { seriesNames }}, dataPointIndex}) => {
-                return [...series].sort((a, b) => b[dataPointIndex] - a[dataPointIndex]).map((s, i) => {
-                  const sIndex = series.indexOf(s)
-									return `
-										<div class="apexcharts-tooltip-series-group active" style="display: flex;">
-											<span class="apexcharts-tooltip-marker" style="background-color: ${colors[sIndex]};">
-											</span>
-											<div class="apexcharts-tooltip-text" style="font-family: Helvetica, Arial, sans-serif; font-size: 12px;">
-												<div class="apexcharts-tooltip-y-group">
-													<span class="apexcharts-tooltip-text-label">${seriesNames[sIndex]}:</span>
-													<span class="apexcharts-tooltip-text-value">${Math.round(Number(s[dataPointIndex]) * 100) / 100}%</span>
-												</div>
-											</div>
-                    </div>`
-              }).join("\n")
-            },
-          }
-        }
-          new ApexCharts(document.querySelector("#<%= key %>-graph"),  options).render();
-        }
-      })
+      <%= render partial: "chart", locals: {key: key}, handlers: [:erb], formats: [:js] %>
   <% end %>
 </script>
