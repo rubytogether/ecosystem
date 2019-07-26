@@ -8,9 +8,9 @@ class StatsController < ApplicationController
   def show
     @key = params.fetch(:id)
     range = RANGES[params[:range] || "3months"]
+    base_query = Stat.where("key = ? AND date > ?", @key, range)
 
     if params[:range] == "1year"
-      base_query = Stat.where("key = ? AND date > ?", @key, range)
       data =
         base_query.group("week, value").pluck(
           "date_trunc('week', date) as week, value, sum(count) as count"
@@ -24,7 +24,6 @@ class StatsController < ApplicationController
           dt
         end
     else
-      base_query = Stat.where("key = ? AND date > ?", @key, range)
       data = base_query.pluck(:date, :value, :count)
       date_totals = base_query.group(:date).order(:date).sum(:count)
     end
