@@ -5,27 +5,19 @@ class StatsController < ApplicationController
     "1month" => Date.today - 30.day,
     "2weeks" => Date.today - 2.weeks
   }
+
+  MINOR_KEYS = %w[ruby bundler rubygems]
+
   def show
     @key = params.fetch(:id)
     range = RANGES[params[:range] || "3months"]
-    base_query = Stat.where("key = ? AND date > ?", @key, range)
 
     if params[:range] == "1year"
-      data =
-        base_query.group("week, value").pluck(
-          "date_trunc('week', date) as week, value, sum(count) as count"
-        )
-      date_totals =
-        base_query.group(:week).pluck(
-          "date_trunc('week', date) as week, sum(count) as count"
-        )
-          .reduce({}) do |dt, row|
-          dt[row[0]] = row[1]
-          dt
-        end
+      data = Stat.weekly_data(@key, range, @key.in?(MINOR_KEYS))
+      date_totals = Stat.weekly_totals(@key, range)
     else
-      data = base_query.pluck(:date, :value, :count)
-      date_totals = base_query.group(:date).order(:date).sum(:count)
+      data = Stat.daily_data(@key, range, @key.in?(MINOR_KEYS))
+      date_totals = Stat.daily_totals(@key, range)
     end
 
     if params[:total]

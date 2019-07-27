@@ -40,7 +40,7 @@ Rails.ajax({
         }) => {
           return [...series]
             .sort((a, b) => b[dataPointIndex] - a[dataPointIndex])
-            .map((s, i) => {
+            .map(s => {
               const sIndex = series.indexOf(s);
               return `
 										<div class="apexcharts-tooltip-series-group active" style="display: flex;">
