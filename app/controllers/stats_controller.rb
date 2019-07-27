@@ -59,7 +59,7 @@ class StatsController < ApplicationController
           data:
             dates.map do |date|
               count =
-                count_map[date].reject { |v| v.in?(top5) }.sum { |v, c| c }
+                count_map[date].reject { |v| v.in?(top) }.sum { |v, c| c }
               y = (count.to_f / date_totals[date]) * 100
               # TODO: Move the formatting to JS
               { x: date.strftime("%m/%d"), y: y }
