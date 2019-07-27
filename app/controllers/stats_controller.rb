@@ -23,8 +23,11 @@ class StatsController < ApplicationController
 
     if params[:total]
       points =
-        date_totals.map { |date, count| { x: date.to_time.to_i, y: count } }
+        date_totals.map do |date, count|
+          { x: date.strftime("%m/%d"), y: count }
+        end
       @series = [{ name: "total", data: points }]
+      @total = true
     else
       dates = data.map(&:first).sort.uniq
       versions = data.map(&:second).sort.uniq
@@ -36,32 +39,35 @@ class StatsController < ApplicationController
       # Build one series for each version, with an entry for every date
       #
       # [ {name: "2.2.2", data: [{x: "2018-07-13", y: 3932}, ...] }, ... ]
-      top5 = versions.max_by(10) { |v| count_map[count_map.keys.last][v] || 0 }
+      top = versions.max_by(10) { |v| count_map[count_map.keys.last][v] || 0 }
 
-      top5_series =
-        top5.map do |version|
+      top_series =
+        top.map do |version|
           points =
             dates.map do |date|
               count = count_map.dig(date, version) || 0
               y = (count.to_f / date_totals[date]) * 100
-              { x: date.strftime("%m/%d/%y"), y: y }
+              { x: date.strftime("%m/%d"), y: y }
             end
 
           { name: "#{@key} #{version}", data: points }
         end
 
-      the_rest = {
-        name: "Others",
-        data:
-          dates.map do |date|
-            count = count_map[date].reject { |v| v.in?(top5) }.sum { |_, c| c }
-            y = (count.to_f / date_totals[date]) * 100
-            # TODO: Move the formatting to JS
-            { x: date.strftime("%m/%d/%y"), y: y }
-          end
-      }
+      if top.length < versions.length
+        the_rest = {
+          name: "Others",
+          data:
+            dates.map do |date|
+              count =
+                count_map[date].reject { |v| v.in?(top5) }.sum { |v, c| c }
+              y = (count.to_f / date_totals[date]) * 100
+              # TODO: Move the formatting to JS
+              { x: date.strftime("%m/%d"), y: y }
+            end
+        }
+      end
 
-      @series = top5_series.push(the_rest)
+      @series = the_rest ? top_series.push(the_rest) : top_series
     end
 
     respond_to do |format|

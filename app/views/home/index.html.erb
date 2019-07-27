@@ -3,17 +3,31 @@
 
 <% @charts.each do | name, key | %>
   <p><%= h name %>, <%= h key %></p>
-  <%= content_tag :div, id: "#{key}-total" do %>
+  <%= content_tag :div, class: "#{key}-graph-ranges" do %>
     <%= link_to "YTD", "/stats/#{CGI.escape(key)}?range=1year", remote: true %>
     <%= link_to "3m", "/stats/#{CGI.escape(key)}?range=3months", remote: true %>
     <%= link_to "1m", "/stats/#{CGI.escape(key)}?range=1month", remote: true %>
     <%= link_to "2w", "/stats/#{CGI.escape(key)}?range=2weeks", remote: true %>
+  <%end %>
+
+  <%= content_tag :div, id: "#{key}-graph" do %>
+  <%end %>
+
+	<%= content_tag :div, class: "#{key}-total-ranges" do %>
+    <%= link_to "YTD", "/stats/#{CGI.escape(key)}?total=true&range=1year", remote: true %>
+    <%= link_to "3m", "/stats/#{CGI.escape(key)}?total=true&range=3months", remote: true %>
+    <%= link_to "1m", "/stats/#{CGI.escape(key)}?total=true&range=1month", remote: true %>
+    <%= link_to "2w", "/stats/#{CGI.escape(key)}?total=true&range=2weeks", remote: true %>
+  <%end %>
+
+  <%= content_tag :div, id: "#{key}-total" do %>
   <% end %>
-  <%= content_tag :div, id: "#{key}-graph" do end %>
+
 <% end %>
 
 <script>
   <% @charts.each do |name, key| %>
       <%= render partial: "chart", locals: {key: key}, handlers: [:erb], formats: [:js] %>
+      <%= render partial: "totals", locals: {key: key}, handlers: [:erb], formats: [:js] %>
   <% end %>
 </script>

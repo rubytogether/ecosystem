@@ -1,0 +1,31 @@
+Rails.ajax({
+  url: "/stats/<%= CGI.escape(key) %>?total=true",
+  type: "get",
+  success: series => {
+    const options = {
+      stroke: {
+        width: 2
+      },
+      chart: {
+        id: "totals-chart-<%= CGI.escape(key) %>",
+        height: 400,
+        type: "bar",
+        animations: { enabled: false }
+      },
+      series,
+      colors: [
+        "#2E93fA",
+        "#66DA26",
+        "#546E7A",
+        "#E91E63",
+        "#FF9800",
+        "#2E294E"
+      ],
+      dataLabels: { enabled: false },
+    };
+    new ApexCharts(
+      document.querySelector("#<%= key %>-total"),
+      options
+    ).render();
+  }
+});
