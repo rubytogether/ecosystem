@@ -1,4 +1,5 @@
 class StatsController < ApplicationController
+  # TODO: this hash needs a default value
   RANGES = {
     "1year" => Date.today - 1.year,
     "3months" => Date.today - 90.day,
@@ -23,48 +24,49 @@ class StatsController < ApplicationController
     if params[:total]
       points =
         date_totals.map { |date, count| { x: date.to_time.to_i, y: count } }
+      @series = [{ name: "total", data: points }]
+    else
+      dates = data.map(&:first).sort.uniq
+      versions = data.map(&:second).sort.uniq
 
-      return render json: [{ name: "total", data: points }]
-    end
+      # Build a hash of hashes we can use to look up values for a specific date
+      count_map = Hash.new { |h, k| h[k] = {} }
+      data.each { |date, version, count| count_map[date][version] = count }
 
-    dates = data.map(&:first).sort.uniq
-    versions = data.map(&:second).sort.uniq
+      # Build one series for each version, with an entry for every date
+      #
+      # [ {name: "2.2.2", data: [{x: "2018-07-13", y: 3932}, ...] }, ... ]
+      top5 = versions.max_by(10) { |v| count_map[count_map.keys.last][v] || 0 }
 
-    # Build a hash of hashes we can use to look up values for a specific date
-    count_map = Hash.new { |h, k| h[k] = {} }
-    data.each { |date, version, count| count_map[date][version] = count }
+      top5_series =
+        top5.map do |version|
+          points =
+            dates.map do |date|
+              count = count_map.dig(date, version) || 0
+              y = (count.to_f / date_totals[date]) * 100
+              { x: date.strftime("%m/%d/%y"), y: y }
+            end
 
-    # Build one series for each version, with an entry for every date
-    #
-    # [ {name: "2.2.2", data: [{x: "2018-07-13", y: 3932}, ...] }, ... ]
-    top5 = versions.max_by(10) { |v| count_map[count_map.keys.last][v] || 0 }
+          { name: "#{@key} #{version}", data: points }
+        end
 
-    top5_series =
-      top5.map do |version|
-        points =
+      the_rest = {
+        name: "Others",
+        data:
           dates.map do |date|
-            count = count_map.dig(date, version) || 0
+            count = count_map[date].reject { |v| v.in?(top5) }.sum { |_, c| c }
             y = (count.to_f / date_totals[date]) * 100
+            # TODO: Move the formatting to JS
             { x: date.strftime("%m/%d/%y"), y: y }
           end
+      }
 
-        { name: "#{@key} #{version}", data: points }
-      end
+      @series = top5_series.push(the_rest)
+    end
 
-    the_rest = {
-      name: "Others",
-      data:
-        dates.map do |date|
-          count = count_map[date].reject { |v| v.in?(top5) }.sum { |_, c| c }
-          y = (count.to_f / date_totals[date]) * 100
-          # TODO: Move the formatting to JS
-          { x: date.strftime("%m/%d/%y"), y: y }
-        end
-    }
-
-    @series = top5_series.push(the_rest)
-    return render action: :show if params[:range]
-
-    render json: @series
+    respond_to do |format|
+      format.json { render json: @series }
+      format.js
+    end
   end
 end
