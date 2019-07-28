@@ -4,7 +4,7 @@ class Stat < ApplicationRecord
   end
 
   def self.minor
-    Arel.sql("substring(value from '\\d.\\d') as minor")
+    Arel.sql("substring(value from '\\d.\\d*') as minor")
   end
 
   def self.sum
