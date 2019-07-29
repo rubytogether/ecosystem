@@ -1,46 +1,4 @@
 class StatsController < ApplicationController
-  # TODO: this hash needs a default value
-  RANGES = {
-    "1year" => Date.today - 1.year,
-    "3months" => Date.today - 90.day,
-    "1month" => Date.today - 30.day,
-    "2weeks" => Date.today - 2.weeks
-  }
-
-  MINOR_KEYS = %w[ruby bundler rubygems]
-
-  def generate_map(data)
-    # Build a hash of hashes we can use to look up values for a specific date
-    count_map = Hash.new { |h, k| h[k] = {} }
-    data.each do |date, version, count|
-      if @key == 'ci'
-        env_cis = %w[travis semaphore jenkins buildbox go snap ci]
-        ci_name =
-          version.split(',').reject { |v| v.downcase.in?(env_cis) }.first
-        if ci_name
-          v = ci_name.downcase
-        else
-          potentials = version.split(',')
-          v =
-            if potentials.length === 1
-              potentials.first
-            else
-              potentials.reject { |p| p === 'ci' }.first
-            end
-        end
-        if count_map[date][v]
-          count_map[date][v] += count
-        else
-          count_map[date][v] = count
-        end
-      else
-        v = version
-        count_map[date][v] = count
-      end
-    end
-    count_map
-  end
-
   def show
     @key = params.fetch(:id)
     range = RANGES[params[:range] || "3months"]
@@ -63,15 +21,14 @@ class StatsController < ApplicationController
     else
       dates = data.map(&:first).sort.uniq
 
-      # Build a hash of hashes we can use to look up values for a specific date
-      count_map = generate_map(data)
+      count_map = @key == "ci" ? count_ci(data) : count(data)
 
       # Build one series for each version, with an entry for every date
       #
       # [ {name: "2.2.2", data: [{x: "2018-07-13", y: 3932}, ...] }, ... ]
-      vs = count_map.values.map(&:keys).flatten.compact.sort.uniq
+      versions = count_map.values.flat_map(&:keys).compact.sort.uniq
       top =
-        vs.max_by(@key == 'ci' ? 8 : 10) do |v|
+        versions.max_by(MAXES[@key]) do |v|
           count_map[count_map.keys.last][v] || 0
         end
 
@@ -87,7 +44,7 @@ class StatsController < ApplicationController
           { name: "#{@key} #{version}", data: points }
         end
 
-      if top.length < vs.length
+      if top.length < versions.length
         the_rest = {
           name: "Others",
           data:
@@ -107,5 +64,47 @@ class StatsController < ApplicationController
       format.json { render json: @series }
       format.js
     end
+  end
+
+  private
+
+  RANGES = {
+    "1year" => Date.today - 1.year,
+    "3months" => Date.today - 90.days,
+    "1month" => Date.today - 30.days,
+    "2weeks" => Date.today - 2.weeks
+  }
+  RANGES.default = Date.today - 90.days
+
+  MINOR_KEYS = %w[ruby bundler rubygems]
+
+  MAXES = { "ci" => 7 }
+  MAXES.default = 10
+
+  ENV_CIS = %w[travis semaphore jenkins buildbox go snap ci]
+
+  def ci(version)
+    ci_name = version.split(",").reject { |v| v.downcase.in?(ENV_CIS) }.first
+    if ci_name
+      ci_name.downcase
+    else
+      version.split(",").reject { |v| v == "ci" }.first || "ci"
+    end
+  end
+
+  def count_ci(data)
+    count_map = Hash.new { |h, k| h[k] = {} }
+    data.each do |date, version, count|
+      ci_version = ci(version)
+      count_map[date][ci_version] = (count_map[date][ci_version] || 0) + count
+    end
+    count_map
+  end
+
+  def count(data)
+    # Build a hash of hashes we can use to look up values for a specific date
+    count_map = Hash.new { |h, k| h[k] = {} }
+    data.each { |date, version, count| count_map[date][version] = count }
+    count_map
   end
 end
