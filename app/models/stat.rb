@@ -1,18 +1,18 @@
 class Stat < ApplicationRecord
   def self.week
-    Arel.sql("date_trunc('week', date) as week")
+    Arel.sql("date_trunc('week', date) AS week")
   end
 
   def self.minor
-    Arel.sql("substring(value from '\\d.\\d*') as minor")
+    Arel.sql("substring(value from '\\d.\\d*') AS minor")
   end
 
   def self.sum
-    Arel.sql('sum(count) as sum')
+    Arel.sql('sum(count) AS sum')
   end
 
   def self.base_query(key, range)
-    Stat.where('key = ? AND date > ?', key, range)
+    Stat.where('key = ? AND date > ?', key, range).where.not(value: '')
   end
 
   def self.weekly_data(key, range, group_minor)

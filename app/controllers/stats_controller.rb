@@ -9,6 +9,38 @@ class StatsController < ApplicationController
 
   MINOR_KEYS = %w[ruby bundler rubygems]
 
+  def generate_map(data)
+    # Build a hash of hashes we can use to look up values for a specific date
+    count_map = Hash.new { |h, k| h[k] = {} }
+    data.each do |date, version, count|
+      if @key == 'ci'
+        env_cis = %w[travis semaphore jenkins buildbox go snap ci]
+        ci_name =
+          version.split(',').reject { |v| v.downcase.in?(env_cis) }.first
+        if ci_name
+          v = ci_name.downcase
+        else
+          potentials = version.split(',')
+          v =
+            if potentials.length === 1
+              potentials.first
+            else
+              potentials.reject { |p| p === 'ci' }.first
+            end
+        end
+        if count_map[date][v]
+          count_map[date][v] += count
+        else
+          count_map[date][v] = count
+        end
+      else
+        v = version
+        count_map[date][v] = count
+      end
+    end
+    count_map
+  end
+
   def show
     @key = params.fetch(:id)
     range = RANGES[params[:range] || "3months"]
@@ -30,16 +62,18 @@ class StatsController < ApplicationController
       @total = true
     else
       dates = data.map(&:first).sort.uniq
-      versions = data.map(&:second).sort.uniq
 
       # Build a hash of hashes we can use to look up values for a specific date
-      count_map = Hash.new { |h, k| h[k] = {} }
-      data.each { |date, version, count| count_map[date][version] = count }
+      count_map = generate_map(data)
 
       # Build one series for each version, with an entry for every date
       #
       # [ {name: "2.2.2", data: [{x: "2018-07-13", y: 3932}, ...] }, ... ]
-      top = versions.max_by(10) { |v| count_map[count_map.keys.last][v] || 0 }
+      vs = count_map.values.map(&:keys).flatten.compact.sort.uniq
+      top =
+        vs.max_by(@key == 'ci' ? 8 : 10) do |v|
+          count_map[count_map.keys.last][v] || 0
+        end
 
       top_series =
         top.map do |version|
@@ -53,13 +87,12 @@ class StatsController < ApplicationController
           { name: "#{@key} #{version}", data: points }
         end
 
-      if top.length < versions.length
+      if top.length < vs.length
         the_rest = {
           name: "Others",
           data:
             dates.map do |date|
-              count =
-                count_map[date].reject { |v| v.in?(top) }.sum { |v, c| c }
+              count = count_map[date].reject { |v| v.in?(top) }.sum { |v, c| c }
               y = (count.to_f / date_totals[date]) * 100
               # TODO: Move the formatting to JS
               { x: date.strftime("%m/%d"), y: y }
