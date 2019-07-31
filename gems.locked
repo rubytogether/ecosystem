@@ -52,17 +52,17 @@ GEM
       tzinfo (~> 1.1)
     arel (9.0.0)
     aws-eventstream (1.0.3)
-    aws-partitions (1.184.0)
-    aws-sdk-core (3.59.0)
+    aws-partitions (1.193.0)
+    aws-sdk-core (3.61.1)
       aws-eventstream (~> 1.0, >= 1.0.2)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.1)
       jmespath (~> 1.0)
-    aws-sdk-kms (1.23.0)
-      aws-sdk-core (~> 3, >= 3.58.0)
+    aws-sdk-kms (1.24.0)
+      aws-sdk-core (~> 3, >= 3.61.1)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.45.0)
-      aws-sdk-core (~> 3, >= 3.58.0)
+    aws-sdk-s3 (1.46.0)
+      aws-sdk-core (~> 3, >= 3.61.1)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.1)
     aws-sigv4 (1.1.0)
@@ -206,7 +206,7 @@ PLATFORMS
   x86_64-darwin-17
 
 DEPENDENCIES
-  aws-sdk-s3 (~> 1.45)
+  aws-sdk-s3 (~> 1.46)
   bootsnap (>= 1.1.0)
   bulk_insert!
   concurrent-ruby
