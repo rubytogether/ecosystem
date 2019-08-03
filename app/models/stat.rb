@@ -1,2 +1,1 @@
-class Stat < ApplicationRecord
-end
+class Stat < ApplicationRecord; end

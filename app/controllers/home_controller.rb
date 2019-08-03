@@ -1,8 +1,6 @@
 class HomeController < ApplicationController
   def index
-    if Stat.count.zero?
-      return render plain: "No data!"
-    end
+    return render plain: "No data!" if Stat.count.zero?
 
     @charts = {
       "Ruby version" => "ruby",

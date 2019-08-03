@@ -6,8 +6,7 @@ class ImportStatsDaysWorker
     dates -= [Time.now.utc.to_date]
 
     Sidekiq::Client.push_bulk(
-      'class' => "ImportStatsDayWorker",
-      'args' => dates.map{|d| [d] }
+      "class" => "ImportStatsDayWorker", "args" => dates.map { |d| [d] }
     )
   end
 end
