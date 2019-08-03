@@ -5,7 +5,7 @@ class ImportStatsFileWorker
     return if ImportStatus.fetched?(key)
 
     s3 = Aws::S3::Client.new
-    bucket= Rails.application.config.stats.bucket_name
+    bucket = Rails.application.config.stats.bucket_name
 
     body = s3.get_object(bucket: bucket, key: key).body.read
     json = JSON.parse(body)
