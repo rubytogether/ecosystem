@@ -39,11 +39,11 @@ class Stat < ApplicationRecord
   private
 
   BUCKETS = {
-    'ruby' => :minor,
-    'bundler' => :minor,
-    'rubygems' => :minor,
-    'ci' => :ci,
-    'platform' => :platform
+    "ruby" => :minor,
+    "bundler" => :minor,
+    "rubygems" => :minor,
+    "ci" => :ci,
+    "platform" => :platform
   }
 
   PLATFORMS = %w[linux mingw32 darwin java]
@@ -57,7 +57,7 @@ class Stat < ApplicationRecord
   end
 
   def self.sum
-    Arel.sql('sum(count) AS sum')
+    Arel.sql("sum(count) AS sum")
   end
 
   def self.ci
@@ -81,13 +81,13 @@ class Stat < ApplicationRecord
 
   def self.platform
     Arel.sql(
-      'COALESCE(' +
-        PLATFORMS.map { |p| "substring(value from '#{p}')" }.join(',') +
+      "COALESCE(" +
+        PLATFORMS.map { |p| "substring(value from '#{p}')" }.join(",") +
         ", 'other') AS platform"
     )
   end
 
   def self.base_query(key, range)
-    Stat.where('key = ? AND date > ?', key, range).where.not(value: '')
+    Stat.where("key = ? AND date > ?", key, range).where.not(value: "")
   end
 end
