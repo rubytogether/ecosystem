@@ -2,14 +2,14 @@ class StatsController < ApplicationController
   # We need to get this data into Rickshaw series format
   def show
     base_query =
-      Stat.where('key = ? AND date > ?', params.fetch(:id), Date.today - 60.day)
+      Stat.where("key = ? AND date > ?", params.fetch(:id), Date.today - 60.day)
     date_totals = base_query.group(:date).order(:date).sum(:count)
 
     if params[:total]
       points =
         date_totals.map { |date, count| { x: date.to_time.to_i, y: count } }
 
-      return render json: [{ name: 'total', data: points }]
+      return render json: [{ name: "total", data: points }]
     end
 
     data = base_query.pluck(:date, :value, :count)

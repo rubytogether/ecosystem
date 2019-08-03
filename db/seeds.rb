@@ -1,17 +1,17 @@
-require 'csv'
+require "csv"
 
-data_file = File.expand_path('seeds/stats.csv', __dir__)
+data_file = File.expand_path("seeds/stats.csv", __dir__)
 
 stats = []
-CSV.foreach(data_file) { |row| stats.push([row[0..2].join('-'), *row[3..-1]]) }
+CSV.foreach(data_file) { |row| stats.push([row[0..2].join("-"), *row[3..-1]]) }
 stats.shift
 
 created_at = Time.now
 stat_values =
   stats.map do |s|
     s.push(created_at, created_at)
-    '(' + s.map { |v| "'#{v}'" }.join(', ') + ')'
-  end.join(', ')
+    "(" + s.map { |v| "'#{v}'" }.join(", ") + ")"
+  end.join(", ")
 
 insert =
   "INSERT INTO stats

@@ -12,33 +12,33 @@
 
 ActiveRecord::Schema.define(version: 2019_07_13_153752) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'pgcrypto'
-  enable_extension 'plpgsql'
+  enable_extension "pgcrypto"
+  enable_extension "plpgsql"
 
-  create_table 'import_statuses',
+  create_table "import_statuses",
                id: :uuid,
-               default: -> { 'gen_random_uuid()' },
+               default: -> { "gen_random_uuid()" },
                force: :cascade do |t|
-    t.string 'key', null: false
-    t.date 'date', null: false
-    t.datetime 'imported_at'
-    t.jsonb 'data'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index %w[key], name: 'index_import_statuses_on_key'
+    t.string "key", null: false
+    t.date "date", null: false
+    t.datetime "imported_at"
+    t.jsonb "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index %w[key], name: "index_import_statuses_on_key"
   end
 
-  create_table 'stats',
+  create_table "stats",
                id: :uuid,
-               default: -> { 'gen_random_uuid()' },
+               default: -> { "gen_random_uuid()" },
                force: :cascade do |t|
-    t.date 'date', null: false
-    t.string 'key', null: false
-    t.string 'value', null: false
-    t.integer 'count', default: 0, null: false
-    t.datetime 'created_at'
-    t.datetime 'updated_at'
+    t.date "date", null: false
+    t.string "key", null: false
+    t.string "value", null: false
+    t.integer "count", default: 0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index %w[date key value],
-            name: 'index_stats_on_date_and_key_and_value', unique: true
+            name: "index_stats_on_date_and_key_and_value", unique: true
   end
 end
