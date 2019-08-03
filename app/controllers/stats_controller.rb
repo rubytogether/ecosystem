@@ -4,10 +4,10 @@ class StatsController < ApplicationController
     range = RANGES[params[:range] || "3months"]
 
     if params[:range] == "1year"
-      data = Stat.weekly_data(@key, range, @key.in?(MINOR_KEYS))
+      data = Stat.weekly_data(@key, range)
       date_totals = Stat.weekly_totals(@key, range)
     else
-      data = Stat.daily_data(@key, range, @key.in?(MINOR_KEYS))
+      data = Stat.daily_data(@key, range)
       date_totals = Stat.daily_totals(@key, range)
     end
 
@@ -20,8 +20,7 @@ class StatsController < ApplicationController
       @total = true
     else
       dates = data.map(&:first).sort.uniq
-
-      count_map = @key == "ci" ? count_ci(data) : count(data)
+      count_map = count(data)
 
       # Build one series for each version, with an entry for every date
       #
@@ -76,30 +75,8 @@ class StatsController < ApplicationController
   }
   RANGES.default = Date.today - 90.days
 
-  MINOR_KEYS = %w[ruby bundler rubygems]
-
   MAXES = { "ci" => 7 }
   MAXES.default = 10
-
-  ENV_CIS = %w[travis semaphore jenkins buildbox go snap ci]
-
-  def ci(version)
-    ci_name = version.split(",").reject { |v| v.downcase.in?(ENV_CIS) }.first
-    if ci_name
-      ci_name.downcase
-    else
-      version.split(",").reject { |v| v == "ci" }.first || "ci"
-    end
-  end
-
-  def count_ci(data)
-    count_map = Hash.new { |h, k| h[k] = {} }
-    data.each do |date, version, count|
-      ci_version = ci(version)
-      count_map[date][ci_version] = (count_map[date][ci_version] || 0) + count
-    end
-    count_map
-  end
 
   def count(data)
     # Build a hash of hashes we can use to look up values for a specific date
