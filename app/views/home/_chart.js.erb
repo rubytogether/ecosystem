@@ -43,20 +43,15 @@ Rails.ajax({
             .map((s, i) => {
               const sIndex = series.indexOf(s);
               return `
-										<div class="apexcharts-tooltip-series-group active" style="display: flex;">
-											<span class="apexcharts-tooltip-marker" style="background-color: ${
-                        colors[sIndex]
-                      };">
-											</span>
-											<div class="apexcharts-tooltip-text" style="font-family: Helvetica, Arial, sans-serif; font-size: 12px;">
-												<div class="apexcharts-tooltip-y-group">
-													<span class="apexcharts-tooltip-text-label">${seriesNames[sIndex]}:</span>
-													<span class="apexcharts-tooltip-text-value">${Math.round(
-                            Number(s[dataPointIndex]) * 100
-                          ) / 100}%</span>
-												</div>
-											</div>
-                    </div>`;
+                <div class="apexcharts-tooltip-series-group active" style="display: flex;">
+                  <span class="apexcharts-tooltip-marker" style="background-color: ${colors[sIndex]};"></span>
+                  <div class="apexcharts-tooltip-text" style="font-family: Helvetica, Arial, sans-serif; font-size: 12px;">
+                    <div class="apexcharts-tooltip-y-group">
+                      <span class="apexcharts-tooltip-text-label">${seriesNames[sIndex]}:</span>
+                      <span class="apexcharts-tooltip-text-value">${Math.round(Number(s[dataPointIndex]) * 100) / 100}%</span>
+                    </div>
+                  </div>
+                </div>`;
             })
             .join("\n");
         }
