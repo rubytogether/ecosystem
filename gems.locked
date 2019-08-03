@@ -209,8 +209,8 @@ PLATFORMS
   x86_64-darwin-17
 
 DEPENDENCIES
-  aws-sdk-s3 (~> 1.46)
   apexcharts
+  aws-sdk-s3 (~> 1.46)
   bootsnap (>= 1.1.0)
   bulk_insert!
   concurrent-ruby
