@@ -1,37 +1,35 @@
 <h1>The Ruby Ecosystem</h1>
 <h3>as of <%= (Date.today - 60.day).to_s(:long) %></h3>
 
-<% @charts.each do |name, key| %>
+
+<% @charts.each do | name, key | %>
   <p><%= h name %>, <%= h key %></p>
-  <%= content_tag :div, id: "#{key}-total" do end %>
-  <%= content_tag :div, id: "#{key}-graph" do end %>
+  <%= content_tag :div, class: "#{key}-graph-ranges" do %>
+    <%= link_to "YTD", "/stats/#{CGI.escape(key)}?range=1year", remote: true %>
+    <%= link_to "3m", "/stats/#{CGI.escape(key)}?range=3months", remote: true %>
+    <%= link_to "1m", "/stats/#{CGI.escape(key)}?range=1month", remote: true %>
+    <%= link_to "2w", "/stats/#{CGI.escape(key)}?range=2weeks", remote: true %>
+  <%end %>
+
+  <%= content_tag :div, id: "#{key}-graph" do %>
+  <%end %>
+
+
+<% end %>
+
+<%= content_tag :div, class: "ruby-total-ranges" do %>
+  <%= link_to "YTD", "/stats/ruby?total=true&range=1year", remote: true %>
+  <%= link_to "3m", "/stats/ruby?total=true&range=3months", remote: true %>
+  <%= link_to "1m", "/stats/ruby?total=true&range=1month", remote: true %>
+  <%= link_to "2w", "/stats/ruby?total=true&range=2weeks", remote: true %>
+<%end %>
+
+<%= content_tag :div, id: "ruby-total" do %>
 <% end %>
 
 <script>
   <% @charts.each do |name, key| %>
-    new Rickshaw.Graph.Ajax({
-      element: document.querySelector("#<%= key %>-total"),
-      renderer: "bar",
-      dataURL: "/stats/<%= CGI.escape(key) %>?total=true",
-    });
-
-    new Rickshaw.Graph.Ajax({
-      element: document.querySelector("#<%= key %>-graph"),
-      height: jQuery(window).height() - 250,
-      renderer: "area",
-      stroke: true,
-      dataURL: "/stats/<%= CGI.escape(key) %>",
-      onData: (d) => {
-        let palette = new Rickshaw.Color.Palette({
-          scheme: "spectrum14",
-        })
-        d.forEach(s => s.color = palette.color())
-        return d
-      },
-      onComplete: function(transport) {
-        var graph = transport.graph;
-        var detail = new Rickshaw.Graph.HoverDetail({ graph: graph });
-      }
-    });
+      <%= render partial: "chart", locals: {key: key}, handlers: [:erb], formats: [:js] %>
   <% end %>
+  <%= render partial: "totals", locals: {key: "ruby"}, handlers: [:erb], formats: [:js] %>
 </script>

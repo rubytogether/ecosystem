@@ -3,9 +3,11 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^4.0.7",
+    "apexcharts": "^3.8.2",
     "cssnext": "^1.8.4",
     "jquery": "^3.3.1",
     "postcss-cssnext": "^3.1.0",
+    "rails-ujs": "^5.2.3",
     "rickshaw": "^1.6.6"
   },
   "devDependencies": {

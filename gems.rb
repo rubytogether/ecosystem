@@ -12,6 +12,7 @@ gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 4.0"
 gem "sidekiq", "~> 5.2"
 gem "webpacker", "~> 4.0"
+gem "apexcharts"
 
 # Gems in both rubygems.org and gems.contribsys.com
 gem "redis"
