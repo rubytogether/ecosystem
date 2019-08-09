@@ -604,10 +604,10 @@
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
 
-"@prettier/plugin-ruby@^0.14.0":
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/@prettier/plugin-ruby/-/plugin-ruby-0.14.0.tgz#4f78911848860b982898ac645ffe4995515ae166"
-  integrity sha512-yrjSQBnwagz07YgB6EF/yWobDrut7m+zE6iWFYSUKpQlMp+744wMsQonVCyXfV47PPLZ2splbujSSt4G0ZE+Xw==
+"@prettier/plugin-ruby@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@prettier/plugin-ruby/-/plugin-ruby-0.15.0.tgz#493f8e79edad05afcd9ef8caf1deca82b9a2f3cc"
+  integrity sha512-INL6bBNF1Xg/2v4bdmjGxIvlAronrkkzGrI8JwUjda87hP2SOQbltXLC19Uo6+1mufaS6Kj2dlGSmTIlfxZwcw==
   dependencies:
     prettier "^1.16.4"
 

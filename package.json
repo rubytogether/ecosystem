@@ -11,7 +11,7 @@
     "rickshaw": "^1.6.6"
   },
   "devDependencies": {
-    "@prettier/plugin-ruby": "^0.14.0",
+    "@prettier/plugin-ruby": "^0.15.0",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-config-standard": "^13.0.1",
