@@ -3,12 +3,14 @@ class HomeController < ApplicationController
     return render plain: "No data!" if Stat.count.zero?
 
     @charts = {
-      "Ruby version" => "ruby",
-      "Bundler version" => "bundler",
-      "RubyGems version" => "rubygems",
-      "Platform" => "platform",
-      "CI system" => "ci",
-      "TLS ciphers" => "tls_cipher"
+      "Ruby" => "/versions/ruby",
+      "Bundler version" => "/versions/bundler",
+      "RubyGems version" => "/versions/rubygems",
+      "Platform" => "/versions/platform",
+      "CI system" => "/versions/ci",
+      "TLS ciphers" => "/versions/tls_cipher",
+      "Rubygems vs Bundler" => "/comparison/rubygems/bundler",
+      "CI vs non-CI" => "/comparison/bundler/ci"
     }
   end
 end

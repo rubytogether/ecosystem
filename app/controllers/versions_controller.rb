@@ -1,15 +1,10 @@
-class StatsController < ApplicationController
+class VersionsController < ApplicationController
   def show
-    @key = params.fetch(:id)
-    range = RANGES[params[:range] || "3months"]
+    key = params.fetch(:key)
+    range = DateRange.new(params)
 
-    if params[:range] == "1year"
-      data = Stat.weekly_data(@key, range)
-      date_totals = Stat.weekly_totals(@key, range)
-    else
-      data = Stat.daily_data(@key, range)
-      date_totals = Stat.daily_totals(@key, range)
-    end
+    data = Stat.send(range.prefix + "data", key, range.value)
+    date_totals = Stat.send(range.prefix + "totals", key, range.value)
 
     if params[:total]
       points =
@@ -27,7 +22,7 @@ class StatsController < ApplicationController
       # [ {name: "2.2.2", data: [{x: "2018-07-13", y: 3932}, ...] }, ... ]
       versions = count_map.values.flat_map(&:keys).compact.sort.uniq
       top =
-        versions.max_by(MAXES[@key]) do |v|
+        versions.max_by(MAXES[key]) do |v|
           count_map[count_map.keys.last][v] || 0
         end
 
@@ -40,7 +35,7 @@ class StatsController < ApplicationController
               { x: date.strftime("%m/%d"), y: y }
             end
 
-          { name: "#{@key} #{version}", data: points }
+          { name: "#{key} #{version}", data: points }
         end
 
       if top.length < versions.length
@@ -66,14 +61,6 @@ class StatsController < ApplicationController
   end
 
   private
-
-  RANGES = {
-    "1year" => Date.today - 1.year,
-    "3months" => Date.today - 90.days,
-    "1month" => Date.today - 30.days,
-    "2weeks" => Date.today - 2.weeks
-  }
-  RANGES.default = Date.today - 90.days
 
   MAXES = { "ci" => 7 }
   MAXES.default = 10

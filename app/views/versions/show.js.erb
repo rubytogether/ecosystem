@@ -1,0 +1,3 @@
+ApexCharts.exec('<%= @total ? "totals-" : "" %>chart-<%= request.path.parameterize %>', 
+                'updateSeries', 
+                JSON.parse(`<%= raw(@series.to_json) %>`), true);
