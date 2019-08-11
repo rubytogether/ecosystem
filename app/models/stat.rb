@@ -36,6 +36,21 @@ class Stat < ApplicationRecord
     end
   end
 
+  def self.daily_comparison(key1, key2, range)
+    Stat.where("(key = ? OR key = ?) AND date > ?", key1, key2, range).where
+      .not(value: "")
+      .group(:date, :key)
+      .order(:date)
+      .pluck(:date, :key, sum)
+  end
+
+  def self.weekly_comparison(key1, key2, range)
+    Stat.where("(key = ? OR key = ?) AND date > ?", key1, key2, range).where
+      .not(value: "")
+      .group(:week, :key)
+      .pluck(week, :key, sum)
+  end
+
   private
 
   BUCKETS = {

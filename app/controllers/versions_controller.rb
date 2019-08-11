@@ -1,15 +1,11 @@
-class StatsController < ApplicationController
+class VersionsController < ApplicationController
   def show
-    @key = params.fetch(:id)
+    @key = params.fetch(:key)
     range = RANGES[params[:range] || "3months"]
 
-    if params[:range] == "1year"
-      data = Stat.weekly_data(@key, range)
-      date_totals = Stat.weekly_totals(@key, range)
-    else
-      data = Stat.daily_data(@key, range)
-      date_totals = Stat.daily_totals(@key, range)
-    end
+    range_prefix = params[:range] === "1year" ? "weekly_" : "daily_"
+    data = Stat.send(range_prefix + "data", @key, range)
+    date_totals = Stat.send(range_prefix + "totals", @key, range)
 
     if params[:total]
       points =

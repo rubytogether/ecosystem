@@ -1,5 +1,5 @@
 Rails.ajax({
-  url: "/stats/<%= CGI.escape(key) %>?total=true",
+  url: "/versions/<%= CGI.escape(key) %>?total=true",
   type: "get",
   success: series => {
     const options = {
