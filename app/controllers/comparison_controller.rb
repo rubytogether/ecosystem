@@ -2,7 +2,6 @@ class ComparisonController < ApplicationController
   def show
     key1 = params.fetch(:key1)
     key2 = params.fetch(:key2)
-    # TODO: extract range processing out - this is duplicated in VersionsController
     range = DateRange.new(params)
 
     data = Stat.send(range.prefix + "comparison", key1, key2, range.value)

@@ -1,10 +1,10 @@
 class VersionsController < ApplicationController
   def show
-    @key = params.fetch(:key)
+    key = params.fetch(:key)
     range = DateRange.new(params)
 
-    data = Stat.send(range.prefix + "data", @key, range.value)
-    date_totals = Stat.send(range.prefix + "totals", @key, range.value)
+    data = Stat.send(range.prefix + "data", key, range.value)
+    date_totals = Stat.send(range.prefix + "totals", key, range.value)
 
     if params[:total]
       points =
@@ -22,7 +22,7 @@ class VersionsController < ApplicationController
       # [ {name: "2.2.2", data: [{x: "2018-07-13", y: 3932}, ...] }, ... ]
       versions = count_map.values.flat_map(&:keys).compact.sort.uniq
       top =
-        versions.max_by(MAXES[@key]) do |v|
+        versions.max_by(MAXES[key]) do |v|
           count_map[count_map.keys.last][v] || 0
         end
 
@@ -35,7 +35,7 @@ class VersionsController < ApplicationController
               { x: date.strftime("%m/%d"), y: y }
             end
 
-          { name: "#{@key} #{version}", data: points }
+          { name: "#{key} #{version}", data: points }
         end
 
       if top.length < versions.length
