@@ -9,7 +9,8 @@ class HomeController < ApplicationController
       "Platform" => "/versions/platform",
       "CI system" => "/versions/ci",
       "TLS ciphers" => "/versions/tls_cipher",
-      "Rubygems vs Bundler" => "/comparison/ruby/bundler"
+      "Rubygems vs Bundler" => "/comparison/ruby/bundler",
+      "CI vs non-CI" => "/comparison/bundler/ci"
     }
   end
 end
