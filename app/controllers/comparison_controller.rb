@@ -3,11 +3,9 @@ class ComparisonController < ApplicationController
     key1 = params.fetch(:key1)
     key2 = params.fetch(:key2)
     # TODO: extract range processing out - this is duplicated in VersionsController
-    range = RANGES[params[:range] || "3months"]
+    range = DateRange.new(params)
 
-    range_prefix = params[:range] === "1year" ? "weekly_" : "daily_"
-
-    data = Stat.send(range_prefix + "comparison", key1, key2, range)
+    data = Stat.send(range.prefix + "comparison", key1, key2, range.value)
 
     dates = data.map(&:first).sort.uniq
     count_map = Hash.new { |h, k| h[k] = {} }
@@ -38,14 +36,4 @@ class ComparisonController < ApplicationController
       format.js { render "versions/show" }
     end
   end
-
-  private
-
-  RANGES = {
-    "1year" => Date.today - 1.year,
-    "3months" => Date.today - 90.days,
-    "1month" => Date.today - 30.days,
-    "2weeks" => Date.today - 2.weeks
-  }
-  RANGES.default = Date.today - 90.days
 end
