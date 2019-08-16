@@ -6,17 +6,49 @@ Rails.ajax({
       stroke: {
         width: 2
       },
+      grid: {
+        show: true,
+        yaxis: {
+            lines: {
+                show: true
+            }
+        }
+      },
+      legend: {
+        formatter: value => value[0].toUpperCase() + value.slice(1),
+        itemMargin: {
+          horizontal: 20,
+          vertical: 25
+        }
+      },
       chart: {
         id: "chart-<%= path.parameterize %>",
         height: 400,
         animations: {
           enabled: false
-        }
+        },
+        toolbar: { show: false }
       },
       series,
       yaxis: {
         labels: {
-          formatter: value => `${Math.round(Number(value) * 100) / 100}%`
+          formatter: value => `${Math.round(Number(value) * 100) / 100}%`,
+          style: {
+            fontSize: "14px",
+            lineHeight: "16px",
+            fontFamily: "Roboto",
+            fontWeight: 300
+          }
+        }
+      },
+      xaxis: {
+        labels: {
+          style: {
+            fontSize: "10px",
+            lineHeight: "16px",
+            fontFamily: "Roboto",
+            fontWeight: 300
+          }
         }
       },
       colors: [
@@ -61,5 +93,6 @@ Rails.ajax({
       document.querySelector("#<%= path.parameterize %>-graph"),
       options
     ).render();
+    document.querySelector(".<%= path.parameterize %>-graph-ranges").parentElement.classList.toggle("hidden")
   }
 });

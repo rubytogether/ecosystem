@@ -7,12 +7,22 @@ Rails.ajax({
         width: 2
       },
       chart: {
-        id: "totals-chart-<%= CGI.escape(key) %>",
+        id: "totals-chart-versions-<%= CGI.escape(key) %>",
         height: 400,
         type: "bar",
         animations: { enabled: false }
       },
       series,
+      xaxis: {
+        labels: {
+          style: {
+            fontSize: "10px",
+            lineHeight: "16px",
+            fontFamily: "Roboto",
+            fontWeight: 300
+          }
+        }
+      },
       colors: [
         "#2E93fA",
         "#66DA26",
@@ -27,5 +37,6 @@ Rails.ajax({
       document.querySelector("#<%= key %>-total"),
       options
     ).render();
+    document.querySelector(".ruby-total-ranges").parentElement.classList.toggle("hidden")
   }
 });

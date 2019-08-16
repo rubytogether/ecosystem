@@ -1,31 +1,57 @@
-<section>
-  <h3>Version breakdowns</h3>
-  <% @charts.each do | name, path | %>
-    <%= content_tag :div, class: "#{path.parameterize}-graph-ranges" do %>
+<h3>Version breakdowns</h3>
+<% @version_charts.each do | name, path | %>
+  <div class="chart-container" tabindex="0">
+    <div class="chart-heading hidden">
       <span><strong><%= h name %></strong></span>
-      <%= link_to "YTD", "#{path}?range=1year", remote: true %>
-      <%= link_to "3m", "#{path}?range=3months", remote: true %>
-      <%= link_to "1m", "#{path}?range=1month", remote: true %>
-      <%= link_to "2w", "#{path}?range=2weeks", remote: true %>
-    <%end %>
+      <%= content_tag :div, class: "#{path.parameterize}-graph-ranges" do %>
+        <%= link_to "2w", "#{path}?range=2weeks", remote: true, tabindex: 0 %>
+        <%= link_to "1m", "#{path}?range=1month", remote: true, tabindex: 0 %>
+        <%= link_to "3m", "#{path}?range=3months", remote: true, tabindex: 0 %>
+        <%= link_to "YTD", "#{path}?range=1year", remote: true, tabindex: 0 %>
+      <%end %>
+    </div>
     <%= content_tag :div, id: "#{path.parameterize}-graph" do %>
     <% end %>
+  </div>
 
-  <% end %>
+<% end %>
 
-  <%= content_tag :div, class: "ruby-total-ranges" do %>
-    <%= link_to "YTD", "/versions/ruby?total=true&range=1year", remote: true %>
-    <%= link_to "3m", "/versions/ruby?total=true&range=3months", remote: true %>
-    <%= link_to "1m", "/versions/ruby?total=true&range=1month", remote: true %>
-    <%= link_to "2w", "/versions/ruby?total=true&range=2weeks", remote: true %>
-  <%end %>
+<h3>Traffic Comparisons</h3>
+<% @comparison_charts.each do | name, path | %>
+  <div class="chart-container" tabindex="0">
+    <div class="chart-heading hidden">
+      <span><strong><%= h name %></strong></span>
+      <%= content_tag :div, class: "#{path.parameterize}-graph-ranges" do %>
+        <%= link_to "2w", "#{path}?range=2weeks", remote: true, tabindex: 0 %>
+        <%= link_to "1m", "#{path}?range=1month", remote: true, tabindex: 0 %>
+        <%= link_to "3m", "#{path}?range=3months", remote: true, tabindex: 0 %>
+        <%= link_to "YTD", "#{path}?range=1year", remote: true, tabindex: 0 %>
+      <%end %>
+    </div>
+    <%= content_tag :div, id: "#{path.parameterize}-graph" do %>
+    <% end %>
+  </div>
 
+<% end %>
+
+
+<h3>Traffic Totals</h3>
+<div class="chart-container" tabindex="0">
+  <div class="chart-heading hidden">
+    <span><strong>Total Requests for Ruby</strong></span>
+    <%= content_tag :div, class: "ruby-total-ranges" do %>
+      <%= link_to "2w", "/versions/ruby?total=true&range=2weeks", remote: true, tabindex: 0 %>
+      <%= link_to "1m", "/versions/ruby?total=true&range=1month", remote: true, tabindex: 0 %>
+      <%= link_to "3m", "/versions/ruby?total=true&range=3months", remote: true, tabindex: 0 %>
+      <%= link_to "YTD", "/versions/ruby?total=true&range=1year", remote: true, tabindex: 0 %>
+    <%end %>
+  </div>
   <%= content_tag :div, id: "ruby-total" do %>
   <% end %>
-</section>
+</div>
 
 <script>
-  <% @charts.each do |name, path| %>
+  <% @version_charts.merge(@comparison_charts).each do |name, path| %>
       <%= render partial: "chart", locals: {path: path}, handlers: [:erb], formats: [:js] %>
   <% end %>
   <%= render partial: "totals", locals: {key: "ruby"}, handlers: [:erb], formats: [:js] %>
