@@ -1,31 +1,26 @@
-<h1>The Ruby Ecosystem</h1>
-<h3>as of <%= (Date.today - 60.day).to_s(:long) %></h3>
+<h3>Version breakdowns</h3>
+<%= render "charts", charts: @version_charts %>
 
-<% @charts.each do | name, path | %>
-  <p><%= h name %></p>
-  <%= content_tag :div, class: "#{path.parameterize}-graph-ranges" do %>
-    <%= link_to "YTD", "#{path}?range=1year", remote: true %>
-    <%= link_to "3m", "#{path}?range=3months", remote: true %>
-    <%= link_to "1m", "#{path}?range=1month", remote: true %>
-    <%= link_to "2w", "#{path}?range=2weeks", remote: true %>
+<h3>Traffic Comparisons</h3>
+<%= render "charts", charts: @comparison_charts %>
+
+<h3>Traffic Totals</h3>
+<div class="chart-container" tabindex="0">
+  <div class="chart-heading hidden">
+    <span><strong>Total Requests</strong></span>
+    <%= content_tag :div, class: "ruby-total-ranges" do %>
+      <%= link_to "2w", "/versions/ruby?total=true&range=2weeks", remote: true, tabindex: 0 %>
+      <%= link_to "1m", "/versions/ruby?total=true&range=1month", remote: true, tabindex: 0 %>
+      <%= link_to "3m", "/versions/ruby?total=true&range=3months", remote: true, tabindex: 0 %>
+      <%= link_to "YTD", "/versions/ruby?total=true&range=1year", remote: true, tabindex: 0 %>
+    <%end %>
+  </div>
+  <%= content_tag :div, id: "ruby-total" do %>
   <% end %>
-
-  <%= content_tag :div, id: "#{path.parameterize}-graph" do %>
-  <% end %>
-<% end %>
-
-<%= content_tag :div, class: "ruby-total-ranges" do %>
-  <%= link_to "YTD", "/versions/ruby?total=true&range=1year", remote: true %>
-  <%= link_to "3m", "/versions/ruby?total=true&range=3months", remote: true %>
-  <%= link_to "1m", "/versions/ruby?total=true&range=1month", remote: true %>
-  <%= link_to "2w", "/versions/ruby?total=true&range=2weeks", remote: true %>
-<%end %>
-
-<%= content_tag :div, id: "ruby-total" do %>
-<% end %>
+</div>
 
 <script>
-  <% @charts.each do |name, path| %>
+  <% @version_charts.merge(@comparison_charts).each do |name, path| %>
       <%= render partial: "chart", locals: {path: path}, handlers: [:erb], formats: [:js] %>
   <% end %>
   <%= render partial: "totals", locals: {key: "ruby"}, handlers: [:erb], formats: [:js] %>

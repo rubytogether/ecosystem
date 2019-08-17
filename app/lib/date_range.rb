@@ -17,4 +17,8 @@ class DateRange
   def prefix
     @value > RANGES["1year"] ? "daily_" : "weekly_"
   end
+
+  def key
+    RANGES.key(@value)
+  end
 end

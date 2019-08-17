@@ -10,7 +10,7 @@ Rails.application.config.content_security_policy do |policy|
   policy.img_src :self, :https, :data
   policy.object_src :none
   policy.script_src :self, :https, "'unsafe-inline'"
-  policy.style_src :self, :https, "'unsafe-inline'"
+  policy.style_src :self, :https, "'unsafe-inline' fonts.googleapis.com"
 
   # Specify URI for violation reports
   # policy.report_uri "/csp-violation-report-endpoint"
@@ -20,7 +20,7 @@ Rails.application.config.content_security_policy do |policy|
                        :https,
                        "http://localhost:3036",
                        "ws://localhost:3035"
-    policy.style_src :self, :blob, "'unsafe-inline'"
+    policy.style_src :self, :blob, "'unsafe-inline' fonts.googleapis.com"
   end
 end
 

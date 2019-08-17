@@ -10,6 +10,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <%= image_pack_tag "gem.svg" %>
+      <h1>The Ruby Ecosystem</h1>
+      <h2>Rubygems and Bundler metrics</h2>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>

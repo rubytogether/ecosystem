@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #e5e5e5;
+  color: #475972;
+  margin: 0;
+
+  header {
+    background: url("../images/orange-waves.svg");
+    color: white;
+    padding-bottom: 85px;
+    padding-top: 85px;
+    text-align: center;
+    h1 {
+      font-weight: 300;
+      font-size: 50px;
+      line-height: 59px;
+    }
+
+    h2 {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 21px;
+    }
+  }
+
+  main {
+    margin: 5% 10%;
+
+    h3 {
+      text-align: center;
+      font-weight: 300;
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    .chart-container {
+      margin-bottom: 5%;
+
+      .chart-heading {
+        strong {
+          font-size: 18px;
+          line-height: 21px;
+          color: black;
+        }
+
+        a {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 16px;
+          letter-spacing: 0.03em;
+          color: #5f7195;
+          text-decoration: none;
+          margin-right: 30px;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        width: 94%;
+        padding: 0 2%;
+      }
+      .apexcharts-xaxis-label {
+        fill: #8e9bb5;
+        &._3months,
+        &._1year {
+          &:nth-child(even) {
+            visibility: hidden;
+          }
+        }
+      }
+
+      .apexcharts-yaxis-label {
+        fill: #8e9bb5;
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none !important;
+}

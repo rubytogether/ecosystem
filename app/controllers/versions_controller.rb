@@ -1,10 +1,10 @@
 class VersionsController < ApplicationController
   def show
     key = params.fetch(:key)
-    range = DateRange.new(params)
+    @range = DateRange.new(params)
 
-    data = Stat.send(range.prefix + "data", key, range.value)
-    date_totals = Stat.send(range.prefix + "totals", key, range.value)
+    data = Stat.send(@range.prefix + "data", key, @range.value)
+    date_totals = Stat.send(@range.prefix + "totals", key, @range.value)
 
     if params[:total]
       points =
@@ -35,7 +35,7 @@ class VersionsController < ApplicationController
               { x: date.strftime("%m/%d"), y: y }
             end
 
-          { name: "#{key} #{version}", data: points }
+          { name: "#{version}", data: points }
         end
 
       if top.length < versions.length
@@ -62,8 +62,8 @@ class VersionsController < ApplicationController
 
   private
 
-  MAXES = { "ci" => 7 }
-  MAXES.default = 10
+  MAXES = { "platform" => 3 }
+  MAXES.default = 5
 
   def count(data)
     # Build a hash of hashes we can use to look up values for a specific date
