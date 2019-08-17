@@ -7,8 +7,7 @@ class HomeController < ApplicationController
       "Bundler version" => "/versions/bundler",
       "RubyGems version" => "/versions/rubygems",
       "Platform" => "/versions/platform",
-      "CI system" => "/versions/ci",
-      "TLS ciphers" => "/versions/tls_cipher"
+      "CI system" => "/versions/ci"
     }
 
     @comparison_charts = {
