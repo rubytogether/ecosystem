@@ -19,7 +19,8 @@ Rails.ajax({
             fontSize: "10px",
             lineHeight: "16px",
             fontFamily: "Roboto",
-            fontWeight: 300
+            fontWeight: 300,
+            cssClass: "_3months"
           }
         }
       },
@@ -31,12 +32,14 @@ Rails.ajax({
         "#FF9800",
         "#2E294E"
       ],
-      dataLabels: { enabled: false },
+      dataLabels: { enabled: false }
     };
     new ApexCharts(
       document.querySelector("#<%= key %>-total"),
       options
     ).render();
-    document.querySelector(".ruby-total-ranges").parentElement.classList.toggle("hidden")
+    document
+      .querySelector(".ruby-total-ranges")
+      .parentElement.classList.toggle("hidden");
   }
 });

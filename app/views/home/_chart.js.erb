@@ -9,9 +9,9 @@ Rails.ajax({
       grid: {
         show: true,
         yaxis: {
-            lines: {
-                show: true
-            }
+          lines: {
+            show: true
+          }
         }
       },
       legend: {
@@ -47,7 +47,8 @@ Rails.ajax({
             fontSize: "10px",
             lineHeight: "16px",
             fontFamily: "Roboto",
-            fontWeight: 300
+            fontWeight: 300,
+            cssClass: "_3months"
           }
         }
       },
@@ -76,11 +77,17 @@ Rails.ajax({
               const sIndex = series.indexOf(s);
               return `
                 <div class="apexcharts-tooltip-series-group active" style="display: flex;">
-                  <span class="apexcharts-tooltip-marker" style="background-color: ${colors[sIndex]};"></span>
+                  <span class="apexcharts-tooltip-marker" style="background-color: ${
+                    colors[sIndex]
+                  };"></span>
                   <div class="apexcharts-tooltip-text" style="font-family: Helvetica, Arial, sans-serif; font-size: 12px;">
                     <div class="apexcharts-tooltip-y-group">
-                      <span class="apexcharts-tooltip-text-label">${seriesNames[sIndex]}:</span>
-                      <span class="apexcharts-tooltip-text-value">${Math.round(Number(s[dataPointIndex]) * 100) / 100}%</span>
+                      <span class="apexcharts-tooltip-text-label">${
+                        seriesNames[sIndex]
+                      }:</span>
+                      <span class="apexcharts-tooltip-text-value">${Math.round(
+                        Number(s[dataPointIndex]) * 100
+                      ) / 100}%</span>
                     </div>
                   </div>
                 </div>`;
@@ -93,6 +100,8 @@ Rails.ajax({
       document.querySelector("#<%= path.parameterize %>-graph"),
       options
     ).render();
-    document.querySelector(".<%= path.parameterize %>-graph-ranges").parentElement.classList.toggle("hidden")
+    document
+      .querySelector(".<%= path.parameterize %>-graph-ranges")
+      .parentElement.classList.toggle("hidden");
   }
 });

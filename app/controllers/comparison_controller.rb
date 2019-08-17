@@ -2,9 +2,9 @@ class ComparisonController < ApplicationController
   def show
     key1 = params.fetch(:key1)
     key2 = params.fetch(:key2)
-    range = DateRange.new(params)
+    @range = DateRange.new(params)
 
-    data = Stat.send(range.prefix + "comparison", key1, key2, range.value)
+    data = Stat.send(@range.prefix + "comparison", key1, key2, @range.value)
 
     dates = data.map(&:first).sort.uniq
     count_map = Hash.new { |h, k| h[k] = {} }

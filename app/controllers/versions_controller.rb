@@ -1,10 +1,10 @@
 class VersionsController < ApplicationController
   def show
     key = params.fetch(:key)
-    range = DateRange.new(params)
+    @range = DateRange.new(params)
 
-    data = Stat.send(range.prefix + "data", key, range.value)
-    date_totals = Stat.send(range.prefix + "totals", key, range.value)
+    data = Stat.send(@range.prefix + "data", key, @range.value)
+    date_totals = Stat.send(@range.prefix + "totals", key, @range.value)
 
     if params[:total]
       points =
