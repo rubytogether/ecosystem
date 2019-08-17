@@ -4,10 +4,10 @@ class HomeController < ApplicationController
 
     @version_charts = {
       "Ruby" => "/versions/ruby",
-      "Bundler version" => "/versions/bundler",
-      "RubyGems version" => "/versions/rubygems",
+      "Bundler" => "/versions/bundler",
+      "RubyGems" => "/versions/rubygems",
       "Platform" => "/versions/platform",
-      "CI system" => "/versions/ci"
+      "CI Provider" => "/versions/ci"
     }
 
     @comparison_charts = {

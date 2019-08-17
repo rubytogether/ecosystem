@@ -4,11 +4,10 @@
 <h3>Traffic Comparisons</h3>
 <%= render "charts", charts: @comparison_charts %>
 
-
 <h3>Traffic Totals</h3>
 <div class="chart-container" tabindex="0">
   <div class="chart-heading hidden">
-    <span><strong>Total Requests for Ruby</strong></span>
+    <span><strong>Total Requests</strong></span>
     <%= content_tag :div, class: "ruby-total-ranges" do %>
       <%= link_to "2w", "/versions/ruby?total=true&range=2weeks", remote: true, tabindex: 0 %>
       <%= link_to "1m", "/versions/ruby?total=true&range=1month", remote: true, tabindex: 0 %>

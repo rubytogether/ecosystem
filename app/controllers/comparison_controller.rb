@@ -17,7 +17,9 @@ class ComparisonController < ApplicationController
         { x: date.strftime("%m/%d"), y: y }
       end
 
-    key1_series = { name: key1, data: key1_points }
+    # TODO: Make this more general
+    key1_name = key1 == "bundler" && key2 == "ci" ? "Non-CI" : key1
+    key1_series = { name: key1_name, data: key1_points }
 
     key2_points =
       dates.map do |date|
@@ -26,7 +28,8 @@ class ComparisonController < ApplicationController
         { x: date.strftime("%m/%d"), y: y }
       end
 
-    key2_series = { name: key2, data: key2_points }
+    key2_name = key2 == "ci" ? "CI" : key2
+    key2_series = { name: key2_name, data: key2_points }
 
     @series = [key1_series, key2_series]
 
