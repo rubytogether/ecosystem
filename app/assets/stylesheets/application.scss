@@ -50,9 +50,12 @@ body {
           font-size: 14px;
           line-height: 16px;
           letter-spacing: 0.03em;
-          color: #5f7195;
           text-decoration: none;
           margin-right: 30px;
+          color: #acc0e6;
+          &.active {
+            color: #5f7195;
+          }
         }
 
         display: flex;
