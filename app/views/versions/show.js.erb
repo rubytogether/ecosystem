@@ -17,3 +17,11 @@ ApexCharts.exec(
     }
   }
 );
+
+Array
+  .from(document.querySelectorAll("<%= @ranges_container_selector %> a"))
+  .forEach(link => link.classList.remove("active"))
+document
+  .querySelector("<%= @ranges_container_selector %>")
+  .querySelector("[class=\"<%= @range.key %>\"]")
+  .classList.add("active")

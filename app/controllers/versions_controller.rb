@@ -13,6 +13,7 @@ class VersionsController < ApplicationController
         end
       @series = [{ name: "total", data: points }]
       @total = true
+      @ranges_container_selector = ".ruby-total-ranges"
     else
       dates = data.map(&:first).sort.uniq
       count_map = count(data)
@@ -52,6 +53,7 @@ class VersionsController < ApplicationController
       end
 
       @series = the_rest ? top_series.push(the_rest) : top_series
+      @ranges_container_selector = ".versions-#{key}-graph-ranges"
     end
 
     respond_to do |format|

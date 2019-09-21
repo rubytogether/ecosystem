@@ -33,6 +33,8 @@ class ComparisonController < ApplicationController
 
     @series = [key1_series, key2_series]
 
+    @ranges_container_selector = ".comparison-#{key1}-#{key2}-graph-ranges"
+
     respond_to do |format|
       format.json { render json: @series }
       format.js { render "versions/show" }

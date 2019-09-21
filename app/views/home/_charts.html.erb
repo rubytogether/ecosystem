@@ -3,10 +3,10 @@
     <div class="chart-heading hidden">
       <span><strong><%= h name %></strong></span>
       <%= content_tag :div, class: "#{path.parameterize}-graph-ranges" do %>
-        <%= link_to "2w", "#{path}?range=2weeks", remote: true, tabindex: 0 %>
-        <%= link_to "1m", "#{path}?range=1month", remote: true, tabindex: 0 %>
-        <%= link_to "3m", "#{path}?range=3months", remote: true, tabindex: 0 %>
-        <%= link_to "YTD", "#{path}?range=1year", remote: true, tabindex: 0 %>
+        <%= link_to "2w", "#{path}?range=2weeks", remote: true, tabindex: 0, class: "2weeks" %>
+        <%= link_to "1m", "#{path}?range=1month", remote: true, tabindex: 0, class: "1month" %>
+        <%= link_to "3m", "#{path}?range=3months", remote: true, tabindex: 0, class: "3months active" %>
+        <%= link_to "YTD", "#{path}?range=1year", remote: true, tabindex: 0, class: "1year" %>
       <%end %>
     </div>
     <%= content_tag :div, id: "#{path.parameterize}-graph" do %>
