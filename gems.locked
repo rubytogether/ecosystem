@@ -50,7 +50,7 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    apexcharts (0.1.5)
+    apexcharts (0.1.8)
       smart_kv (= 0.2.7)
     arel (9.0.0)
     aws-eventstream (1.0.3)
