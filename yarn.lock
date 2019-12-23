@@ -920,10 +920,10 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-apexcharts@^3.8.4:
-  version "3.8.4"
-  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-3.8.4.tgz#8fad5f6303786d91a1b0e6e57ab453f1e86794ce"
-  integrity sha512-I3eE5rHv4BK8w+PeK0Rx4hpVQXtjsaPImlD5Da4QVlta11yaQ2f3kmgAFDn3KBzY/qd1wqHCi6REBGFvpoIbzA==
+apexcharts@^3.11.2:
+  version "3.11.2"
+  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-3.11.2.tgz#acb6b4a3b3ffad740f43a70a393888a37095a817"
+  integrity sha512-t3HWqBIFfbxq7z+Z68a2qZ5qzQK1UAYeI9BNMsjgZGqJw67ZkCQMmFUDRpwGX8JK+6C4p0GKoiCAyO1b3wo7DQ==
   dependencies:
     promise-polyfill "8.1.0"
     svg.draggable.js "^2.2.2"
