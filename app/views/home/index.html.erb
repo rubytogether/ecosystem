@@ -1,10 +1,19 @@
 <h3>Version breakdowns</h3>
+<p style="text-align:center;">
+  Version breakdowns group all bugfix versions together, showing the relative users of each minor version. We track every single version number, but it makes the graphs too cluttered to parse.
+</p>
 <%= render "charts", charts: @version_charts %>
 
 <h3>Traffic Comparisons</h3>
+<p style="text-align:center;">
+  Group all traffic for relative comparison. In these graphs, "RubyGems" means <code>gem install</code> while "Bundler" means <code>bundle install</code>, and "CI" means Bundler found a value in the <code>CI</code> environment variable.
+</p>
 <%= render "charts", charts: @comparison_charts %>
 
 <h3>Traffic Totals</h3>
+<p style="text-align:center;">
+  The count of requests whose logs were fully processed and counted on a given day. All other charts are percentages relative to the total, while this chart shows the absolute number of data points available on a given day.
+</p>
 <div class="chart-container" tabindex="0">
   <div class="chart-heading hidden">
     <span><strong>Total Requests</strong></span>
