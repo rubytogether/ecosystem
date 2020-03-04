@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ecosystem</title>
+    <title>RubyGems.org stats</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,8 +12,17 @@
   <body>
     <header>
       <%= image_pack_tag "gem.svg" %>
-      <h1>The Ruby Ecosystem</h1>
-      <h2>Rubygems and Bundler metrics</h2>
+      <h1>RubyGems.org stats</h1>
+      <p>
+        Logs produced by <a href="https://github.com/rubygems/rubygems.org">rubygems.org</a>,
+        processed by <a href="https://github.com/rubytogether/kirby">kirby</a> and
+        displayed by <a href="https://github.com/rubytogether/ecosystem">ecosystem</a>.
+      </p>
+      <p>
+        Coded by <a href="https://github.com/indirect">@indirect</a>
+        and <a href="https://github.com/sidk">@sidk</a>,
+        hosted by <a href="https://rubytogether.org">Ruby Together</a>.
+      </p>
     </header>
     <main>
       <%= yield %>
