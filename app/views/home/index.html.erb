@@ -1,6 +1,6 @@
 <h3>Version breakdowns</h3>
 <p style="text-align:center;">
-  Version breakdowns group all bugfix versions together, showing the relative users of each minor version. We track every single version number, but it makes the graphs too cluttered to parse.
+  The version graphs try to count each run of <code>gem install</code> or <code>bundle install</code> exactly one time. However, since each of those commands can trigger dozens or even hundreds of HTTP requests, these results are not necessarily accurate. After trying to keep only one entry per install command, we group each minor version together because graphing every patch version just makes a mess.
 </p>
 <%= render "charts", charts: @version_charts %>
 
