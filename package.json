@@ -10,7 +10,7 @@
     "rails-ujs": "^5.2.3"
   },
   "devDependencies": {
-    "@prettier/plugin-ruby": "^0.15.0",
+    "@prettier/plugin-ruby": "^0.17.0",
     "eslint": "^6.4.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-config-standard": "^14.1.0",
