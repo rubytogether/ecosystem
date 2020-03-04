@@ -6,6 +6,10 @@ body {
   color: #475972;
   margin: 0;
 
+  a, a:visited {
+    color: white;
+  }
+
   header {
     background: url("../images/orange-waves.svg");
     color: white;
@@ -13,15 +17,15 @@ body {
     padding-top: 85px;
     text-align: center;
     h1 {
-      font-weight: 300;
+      font-weight: 600;
       font-size: 50px;
       line-height: 59px;
     }
 
     h2 {
       font-weight: 300;
-      font-size: 18px;
-      line-height: 21px;
+      font-size: 32px;
+      line-height: 40px;
     }
   }
 
