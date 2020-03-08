@@ -39,6 +39,11 @@ body {
       line-height: 35px;
     }
 
+    p {
+      max-width: 40em;
+      margin: 0 auto 2em auto;
+    }
+
     .chart-container {
       margin-bottom: 5%;
 
