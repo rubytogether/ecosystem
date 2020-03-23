@@ -2,7 +2,7 @@
   "name": "ecosystem",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^4.0.7",
+    "@rails/webpacker": "^5.0.0",
     "apexcharts": "^3.8.4",
     "cssnext": "^1.8.4",
     "jquery": "^3.3.1",
