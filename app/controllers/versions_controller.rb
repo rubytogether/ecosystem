@@ -1,6 +1,7 @@
 class VersionsController < ApplicationController
   def show
     key = params.fetch(:key)
+    limit = Integer(params.fetch(:limit) { DEFAULT_LIMITS[key] }).clamp(0, MAX_LIMIT)
     @range = DateRange.new(params)
 
     data = Stat.send(@range.prefix + "data", key, @range.value)
@@ -23,7 +24,7 @@ class VersionsController < ApplicationController
       # [ {name: "2.2.2", data: [{x: "2018-07-13", y: 3932}, ...] }, ... ]
       versions = count_map.values.flat_map(&:keys).compact.sort.uniq
       top =
-        versions.max_by(MAXES[key]) do |v|
+        versions.max_by(limit) do |v|
           count_map[count_map.keys.last][v] || 0
         end
 
@@ -64,8 +65,9 @@ class VersionsController < ApplicationController
 
   private
 
-  MAXES = { "platform" => 3 }
-  MAXES.default = 5
+  DEFAULT_LIMITS = { "platform" => 3 }
+  DEFAULT_LIMITS.default = 5
+  MAX_LIMIT = 25
 
   def count(data)
     # Build a hash of hashes we can use to look up values for a specific date
