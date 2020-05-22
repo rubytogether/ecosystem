@@ -115,7 +115,7 @@ GEM
       pry (~> 0.10)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
-    puma (4.3.3)
+    puma (4.3.5)
       nio4r (~> 2.0)
     rack (2.0.8)
     rack-protection (2.0.7)
@@ -219,7 +219,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   pry-byebug
   pry-rails (~> 0.3.9)
-  puma (~> 4.1)
+  puma (~> 4.3)
   rack
   rack-protection
   rails (~> 5.2.3)
