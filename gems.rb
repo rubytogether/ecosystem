@@ -35,3 +35,5 @@ end
 source "https://gems.contribsys.com/" do
   gem "sidekiq-pro"
 end
+
+gem "lograge", "~> 0.11.2"
