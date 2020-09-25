@@ -10,7 +10,7 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "bulk_insert", git: "https://github.com/jamis/bulk_insert.git"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 4.1"
-gem "sidekiq", "~> 5.2"
+gem "sidekiq", "~> 6.0"
 gem "webpacker", "~> 4.0"
 gem "apexcharts"
 
