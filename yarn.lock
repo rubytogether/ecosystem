@@ -604,12 +604,12 @@
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
 
-"@prettier/plugin-ruby@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@prettier/plugin-ruby/-/plugin-ruby-0.15.0.tgz#493f8e79edad05afcd9ef8caf1deca82b9a2f3cc"
-  integrity sha512-INL6bBNF1Xg/2v4bdmjGxIvlAronrkkzGrI8JwUjda87hP2SOQbltXLC19Uo6+1mufaS6Kj2dlGSmTIlfxZwcw==
+"@prettier/plugin-ruby@^0.21.0":
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/@prettier/plugin-ruby/-/plugin-ruby-0.21.0.tgz#a76fc4d60fd3a28508984cb77d93c51723d04b70"
+  integrity sha512-2UBUPd6YcDIJ/d38Ow/0KuSdnkS3DLhZLcVuDvwV1RBX7cN+W2VpaVy3e0yOzN3tHGLZ5E/cfmr23SUkO0tdnw==
   dependencies:
-    prettier "^1.16.4"
+    prettier ">=1.10"
 
 "@rails/webpacker@^4.0.7":
   version "4.0.7"
@@ -6656,7 +6656,12 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@^1.16.4, prettier@^1.18.2:
+prettier@>=1.10:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
+  integrity sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
+
+prettier@^1.18.2:
   version "1.18.2"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.18.2.tgz#6823e7c5900017b4bd3acf46fe9ac4b4d7bda9ea"
   integrity sha512-OeHeMc0JhFE9idD4ZdtNibzY0+TPHSpSSb9h8FqtP+YnoZZ1sl8Vc9b1sasjfymH3SonAF4QcA2+mzHPhMvIiw==
