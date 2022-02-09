@@ -2228,10 +2228,10 @@ cssnano@^4.1.10:
     is-resolvable "^1.0.0"
     postcss "^7.0.0"
 
-cssnext@^1.8.4:
-  version "1.8.4"
-  resolved "https://registry.yarnpkg.com/cssnext/-/cssnext-1.8.4.tgz#c1ec22a95c20ea0b7441f3af2f664adc6721e181"
-  integrity sha1-wewiqVwg6gt0QfOvL2ZK3Gch4YE=
+cssnext@^1.8.5:
+  version "1.8.5"
+  resolved "https://registry.yarnpkg.com/cssnext/-/cssnext-1.8.5.tgz#1751277cf7ecc5cb651c36a449b86705c170e3b4"
+  integrity sha512-ayLannV+IydQ//IjndAL98rAZvNoduuIxeBCtqsjyRLGXVk/Yik4iJZxzFn1kzOC4InlsyLgH96OdGxUjqHjMw==
   dependencies:
     autoprefixer-core "^5.0.0"
     caniuse-api "^1.3.1"
