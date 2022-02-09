@@ -1,0 +1,1926 @@
+{
+  "2022-01-31": {
+    "bundler": {
+      "1.12.5": {
+        "total": 120,
+        "unique": 53
+      },
+      "1.15.4": {
+        "total": 5,
+        "unique": 2
+      },
+      "1.16.1": {
+        "total": 33,
+        "unique": 4
+      },
+      "1.16.2": {
+        "total": 1,
+        "unique": 1
+      },
+      "1.16.6": {
+        "total": 8,
+        "unique": 4
+      },
+      "1.17.2": {
+        "total": 4,
+        "unique": 1
+      },
+      "1.17.3": {
+        "total": 7,
+        "unique": 3
+      },
+      "1.9.10": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.1.4": {
+        "total": 13,
+        "unique": 5
+      },
+      "2.2.15": {
+        "total": 6,
+        "unique": 2
+      },
+      "2.2.16": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.2.22": {
+        "total": 3,
+        "unique": 1
+      },
+      "2.2.33": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.2.7": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.3.6": {
+        "total": 3,
+        "unique": 1
+      }
+    },
+    "ci": {
+      "ci": {
+        "total": 3,
+        "unique": 1
+      },
+      "circle,ci": {
+        "total": 1,
+        "unique": 1
+      },
+      "gitlab,ci": {
+        "total": 2,
+        "unique": 1
+      }
+    },
+    "gemstash": {
+    },
+    "platform": {
+      "aarch64-linux": {
+        "total": 2,
+        "unique": 1
+      },
+      "universal-darwin-20": {
+        "total": 4,
+        "unique": 2
+      },
+      "universal-java-1.8": {
+        "total": 1,
+        "unique": 1
+      },
+      "universal-java-11": {
+        "total": 4,
+        "unique": 2
+      },
+      "x86_64-Oracle Corporation-linux": {
+        "total": 2,
+        "unique": 1
+      },
+      "x86_64-darwin-19": {
+        "total": 3,
+        "unique": 1
+      },
+      "x86_64-darwin-21": {
+        "total": 1,
+        "unique": 1
+      },
+      "x86_64-linux": {
+        "total": 152,
+        "unique": 28
+      },
+      "x86_64-pc-linux": {
+        "total": 14,
+        "unique": 6
+      },
+      "x86_64-pc-linux-gnu": {
+        "total": 185,
+        "unique": 33
+      },
+      "x86_64-w64-mingw32": {
+        "total": 7,
+        "unique": 3
+      }
+    },
+    "ruby": {
+      "1.8.7": {
+        "total": 1,
+        "unique": 1
+      },
+      "1.9.3": {
+        "total": 4,
+        "unique": 2
+      },
+      "2.0.0": {
+        "total": 9,
+        "unique": 3
+      },
+      "2.1.10": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.1.6": {
+        "total": 7,
+        "unique": 2
+      },
+      "2.3.0": {
+        "total": 8,
+        "unique": 2
+      },
+      "2.3.1": {
+        "total": 21,
+        "unique": 3
+      },
+      "2.3.3": {
+        "total": 12,
+        "unique": 4
+      },
+      "2.3.5": {
+        "total": 13,
+        "unique": 7
+      },
+      "2.3.6": {
+        "total": 97,
+        "unique": 16
+      },
+      "2.4.10": {
+        "total": 3,
+        "unique": 1
+      },
+      "2.4.3": {
+        "total": 8,
+        "unique": 3
+      },
+      "2.4.4": {
+        "total": 5,
+        "unique": 2
+      },
+      "2.4.5": {
+        "total": 11,
+        "unique": 2
+      },
+      "2.4.7": {
+        "total": 5,
+        "unique": 3
+      },
+      "2.4.9": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.5.1": {
+        "total": 12,
+        "unique": 5
+      },
+      "2.5.3": {
+        "total": 42,
+        "unique": 12
+      },
+      "2.5.5": {
+        "total": 16,
+        "unique": 7
+      },
+      "2.5.7": {
+        "total": 14,
+        "unique": 5
+      },
+      "2.5.8": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.5.9": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.6.2": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.6.3": {
+        "total": 8,
+        "unique": 2
+      },
+      "2.6.4": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.6.5": {
+        "total": 17,
+        "unique": 7
+      },
+      "2.6.6": {
+        "total": 5,
+        "unique": 3
+      },
+      "2.6.7": {
+        "total": 3,
+        "unique": 1
+      },
+      "2.6.8": {
+        "total": 3,
+        "unique": 2
+      },
+      "2.7.0": {
+        "total": 4,
+        "unique": 1
+      },
+      "2.7.1": {
+        "total": 5,
+        "unique": 1
+      },
+      "2.7.2": {
+        "total": 11,
+        "unique": 4
+      },
+      "2.7.3": {
+        "total": 3,
+        "unique": 2
+      },
+      "2.7.4": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.7.5": {
+        "total": 9,
+        "unique": 1
+      },
+      "3.0.1": {
+        "total": 5,
+        "unique": 2
+      },
+      "3.0.2": {
+        "total": 3,
+        "unique": 2
+      },
+      "3.0.3": {
+        "total": 1,
+        "unique": 1
+      }
+    },
+    "rubygems": {
+      "1.3.7": {
+        "total": 1,
+        "unique": 1
+      },
+      "1.8.23": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.0.14.1": {
+        "total": 9,
+        "unique": 2
+      },
+      "2.4.8": {
+        "total": 7,
+        "unique": 3
+      },
+      "2.5.2": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.5.2.1": {
+        "total": 13,
+        "unique": 4
+      },
+      "2.6.10": {
+        "total": 4,
+        "unique": 2
+      },
+      "2.6.11": {
+        "total": 3,
+        "unique": 1
+      },
+      "2.6.13": {
+        "total": 7,
+        "unique": 3
+      },
+      "2.6.14": {
+        "total": 116,
+        "unique": 37
+      },
+      "2.6.14.4": {
+        "total": 9,
+        "unique": 4
+      },
+      "2.6.6": {
+        "total": 11,
+        "unique": 5
+      },
+      "2.6.7": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.6.8": {
+        "total": 8,
+        "unique": 3
+      },
+      "2.7.10": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.7.11": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.7.6": {
+        "total": 52,
+        "unique": 13
+      },
+      "2.7.6.2": {
+        "total": 9,
+        "unique": 4
+      },
+      "2.7.6.3": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.7.7": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.7.9": {
+        "total": 24,
+        "unique": 3
+      },
+      "3.0.3": {
+        "total": 37,
+        "unique": 13
+      },
+      "3.0.3.1": {
+        "total": 5,
+        "unique": 2
+      },
+      "3.0.6": {
+        "total": 4,
+        "unique": 1
+      },
+      "3.0.8": {
+        "total": 1,
+        "unique": 1
+      },
+      "3.1.2": {
+        "total": 9,
+        "unique": 4
+      },
+      "3.1.4": {
+        "total": 10,
+        "unique": 5
+      },
+      "3.1.6": {
+        "total": 13,
+        "unique": 5
+      },
+      "3.2.15": {
+        "total": 5,
+        "unique": 2
+      },
+      "3.2.20": {
+        "total": 1,
+        "unique": 1
+      },
+      "3.2.22": {
+        "total": 3,
+        "unique": 1
+      },
+      "3.2.29": {
+        "total": 1,
+        "unique": 1
+      },
+      "3.2.32": {
+        "total": 1,
+        "unique": 1
+      },
+      "3.2.7": {
+        "total": 1,
+        "unique": 1
+      },
+      "3.3.6": {
+        "total": 1,
+        "unique": 1
+      }
+    },
+    "server_region": {
+    },
+    "tls_cipher": {
+      "": {
+        "total": 2,
+        "unique": 1
+      },
+      "AES128-GCM": {
+        "total": 3,
+        "unique": 1
+      },
+      "AES256-GCM": {
+        "total": 54,
+        "unique": 9
+      },
+      "ECDHE-RSA-AES128-GCM-SHA256": {
+        "total": 321,
+        "unique": 142
+      },
+      "ECDHE-RSA-AES128-SHA256": {
+        "total": 1,
+        "unique": 1
+      }
+    }
+  },
+  "2022-02-01": {
+    "bundler": {
+      "1.10.6": {
+        "total": 10,
+        "unique": 4
+      },
+      "1.11.2": {
+        "total": 79,
+        "unique": 14
+      },
+      "1.12.5": {
+        "total": 29054,
+        "unique": 5240
+      },
+      "1.13.5": {
+        "total": 11,
+        "unique": 4
+      },
+      "1.13.6": {
+        "total": 18,
+        "unique": 7
+      },
+      "1.13.7": {
+        "total": 41,
+        "unique": 6
+      },
+      "1.14.3": {
+        "total": 1,
+        "unique": 1
+      },
+      "1.14.4": {
+        "total": 1,
+        "unique": 1
+      },
+      "1.14.5": {
+        "total": 1,
+        "unique": 1
+      },
+      "1.14.6": {
+        "total": 68,
+        "unique": 10
+      },
+      "1.15.0": {
+        "total": 6,
+        "unique": 3
+      },
+      "1.15.1": {
+        "total": 61,
+        "unique": 20
+      },
+      "1.15.3": {
+        "total": 3,
+        "unique": 1
+      },
+      "1.15.4": {
+        "total": 1890,
+        "unique": 413
+      },
+      "1.16.0": {
+        "total": 15,
+        "unique": 6
+      },
+      "1.16.1": {
+        "total": 5638,
+        "unique": 1911
+      },
+      "1.16.2": {
+        "total": 149,
+        "unique": 72
+      },
+      "1.16.3": {
+        "total": 8,
+        "unique": 4
+      },
+      "1.16.5": {
+        "total": 39,
+        "unique": 19
+      },
+      "1.16.6": {
+        "total": 2506,
+        "unique": 773
+      },
+      "1.17.1": {
+        "total": 16,
+        "unique": 3
+      },
+      "1.17.2": {
+        "total": 2148,
+        "unique": 948
+      },
+      "1.17.3": {
+        "total": 2863,
+        "unique": 1337
+      },
+      "1.17.3.ol.0.1.0": {
+        "total": 1,
+        "unique": 1
+      },
+      "1.5.3": {
+        "total": 5,
+        "unique": 1
+      },
+      "1.7.3": {
+        "total": 2,
+        "unique": 1
+      },
+      "1.7.4": {
+        "total": 3,
+        "unique": 2
+      },
+      "1.7.5": {
+        "total": 1,
+        "unique": 1
+      },
+      "1.9.10": {
+        "total": 10,
+        "unique": 2
+      },
+      "1.9.4": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.0.1": {
+        "total": 16,
+        "unique": 6
+      },
+      "2.0.2": {
+        "total": 21,
+        "unique": 11
+      },
+      "2.1.1": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.1.2": {
+        "total": 17,
+        "unique": 9
+      },
+      "2.1.4": {
+        "total": 2763,
+        "unique": 367
+      },
+      "2.2.0": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.2.10": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.2.11": {
+        "total": 10,
+        "unique": 3
+      },
+      "2.2.12": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.2.13": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.2.15": {
+        "total": 573,
+        "unique": 209
+      },
+      "2.2.16": {
+        "total": 33,
+        "unique": 15
+      },
+      "2.2.17": {
+        "total": 17,
+        "unique": 9
+      },
+      "2.2.18": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.2.19": {
+        "total": 8,
+        "unique": 4
+      },
+      "2.2.2": {
+        "total": 3,
+        "unique": 1
+      },
+      "2.2.20": {
+        "total": 64,
+        "unique": 13
+      },
+      "2.2.21": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.2.22": {
+        "total": 755,
+        "unique": 101
+      },
+      "2.2.23": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.2.24": {
+        "total": 14,
+        "unique": 4
+      },
+      "2.2.25": {
+        "total": 11,
+        "unique": 4
+      },
+      "2.2.26": {
+        "total": 45,
+        "unique": 11
+      },
+      "2.2.27": {
+        "total": 57,
+        "unique": 24
+      },
+      "2.2.28": {
+        "total": 37,
+        "unique": 8
+      },
+      "2.2.29": {
+        "total": 48,
+        "unique": 22
+      },
+      "2.2.3": {
+        "total": 15,
+        "unique": 3
+      },
+      "2.2.30": {
+        "total": 19,
+        "unique": 8
+      },
+      "2.2.31": {
+        "total": 116,
+        "unique": 19
+      },
+      "2.2.32": {
+        "total": 408,
+        "unique": 193
+      },
+      "2.2.33": {
+        "total": 389,
+        "unique": 167
+      },
+      "2.2.4": {
+        "total": 3,
+        "unique": 2
+      },
+      "2.2.5": {
+        "total": 4,
+        "unique": 2
+      },
+      "2.2.6": {
+        "total": 5,
+        "unique": 2
+      },
+      "2.2.7": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.2.8": {
+        "total": 34,
+        "unique": 14
+      },
+      "2.2.9": {
+        "total": 10,
+        "unique": 2
+      },
+      "2.3.0": {
+        "total": 3,
+        "unique": 1
+      },
+      "2.3.1": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.3.2": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.3.3": {
+        "total": 23,
+        "unique": 6
+      },
+      "2.3.4": {
+        "total": 52,
+        "unique": 26
+      },
+      "2.3.5": {
+        "total": 33,
+        "unique": 14
+      },
+      "2.3.6": {
+        "total": 204,
+        "unique": 72
+      },
+      "2.4.0.dev": {
+        "total": 2,
+        "unique": 1
+      }
+    },
+    "ci": {
+      "aws-code-build,ci": {
+        "total": 3,
+        "unique": 1
+      },
+      "ci": {
+        "total": 479,
+        "unique": 152
+      },
+      "circle,ci": {
+        "total": 206,
+        "unique": 67
+      },
+      "circle-ci": {
+        "total": 1,
+        "unique": 1
+      },
+      "gitlab,ci": {
+        "total": 47,
+        "unique": 8
+      },
+      "jenkins": {
+        "total": 72,
+        "unique": 36
+      },
+      "jenkins,ci": {
+        "total": 84,
+        "unique": 36
+      },
+      "semaphore,ci": {
+        "total": 24,
+        "unique": 5
+      },
+      "travis,ci": {
+        "total": 10,
+        "unique": 3
+      }
+    },
+    "gemstash": {
+    },
+    "platform": {
+      "aarch64-apple-darwin21.2.0": {
+        "total": 1,
+        "unique": 1
+      },
+      "aarch64-linux": {
+        "total": 305,
+        "unique": 124
+      },
+      "aarch64-linux-android": {
+        "total": 2,
+        "unique": 1
+      },
+      "aarch64-unknown-linux": {
+        "total": 16,
+        "unique": 4
+      },
+      "aarch64-unknown-linux-gnu": {
+        "total": 135,
+        "unique": 16
+      },
+      "aarch64-unknown-linux-musl": {
+        "total": 3,
+        "unique": 2
+      },
+      "amd64-freebsd-12": {
+        "total": 1,
+        "unique": 1
+      },
+      "arm-apple-darwin20.2.0": {
+        "total": 1,
+        "unique": 1
+      },
+      "arm-apple-darwin20.6.0": {
+        "total": 3,
+        "unique": 2
+      },
+      "arm-apple-darwin21.2.0": {
+        "total": 2,
+        "unique": 1
+      },
+      "arm-apple-darwin21.3.0": {
+        "total": 1,
+        "unique": 1
+      },
+      "arm-linux": {
+        "total": 11,
+        "unique": 2
+      },
+      "arm-linux-androideabi": {
+        "total": 1,
+        "unique": 1
+      },
+      "arm64-apple-darwin20": {
+        "total": 27,
+        "unique": 10
+      },
+      "arm64-apple-darwin21": {
+        "total": 16,
+        "unique": 3
+      },
+      "arm64-darwin-20": {
+        "total": 5,
+        "unique": 3
+      },
+      "arm64-darwin-21": {
+        "total": 11,
+        "unique": 3
+      },
+      "armv7l-linux": {
+        "total": 3,
+        "unique": 2
+      },
+      "armv7l-linux-eabihf": {
+        "total": 4,
+        "unique": 2
+      },
+      "armv7l-unknown-linux-eabihf": {
+        "total": 2,
+        "unique": 1
+      },
+      "armv7l-unknown-linux-gnueabihf": {
+        "total": 3,
+        "unique": 2
+      },
+      "i686-pc-linux-gnu": {
+        "total": 1,
+        "unique": 1
+      },
+      "i686-w64-mingw32": {
+        "total": 14,
+        "unique": 2
+      },
+      "powerpc-ibm-aix6.1.0.0": {
+        "total": 8,
+        "unique": 2
+      },
+      "powerpc-ibm-aix7.1.5.0": {
+        "total": 5,
+        "unique": 1
+      },
+      "powerpc64le-unknown-linux": {
+        "total": 1,
+        "unique": 1
+      },
+      "sparc-sun-solaris2.11": {
+        "total": 9,
+        "unique": 4
+      },
+      "universal-darwin-16": {
+        "total": 6,
+        "unique": 2
+      },
+      "universal-darwin-17": {
+        "total": 15,
+        "unique": 6
+      },
+      "universal-darwin-18": {
+        "total": 1,
+        "unique": 1
+      },
+      "universal-darwin-19": {
+        "total": 52,
+        "unique": 10
+      },
+      "universal-darwin-20": {
+        "total": 325,
+        "unique": 66
+      },
+      "universal-darwin-21": {
+        "total": 44,
+        "unique": 11
+      },
+      "universal-java-1.8": {
+        "total": 167,
+        "unique": 67
+      },
+      "universal-java-11": {
+        "total": 751,
+        "unique": 227
+      },
+      "x64-mingw32": {
+        "total": 358,
+        "unique": 78
+      },
+      "x64-w64-mingw32": {
+        "total": 252,
+        "unique": 102
+      },
+      "x86-linux": {
+        "total": 6,
+        "unique": 2
+      },
+      "x86-mingw32": {
+        "total": 258,
+        "unique": 106
+      },
+      "x86-solaris-2.10": {
+        "total": 6,
+        "unique": 3
+      },
+      "x86_64-AdoptOpenJDK-linux": {
+        "total": 42,
+        "unique": 13
+      },
+      "x86_64-Amazon.com Inc.-linux": {
+        "total": 1,
+        "unique": 1
+      },
+      "x86_64-Azul Systems, Inc.-linux": {
+        "total": 4,
+        "unique": 2
+      },
+      "x86_64-Eclipse Adoptium-linux": {
+        "total": 17,
+        "unique": 9
+      },
+      "x86_64-Oracle Corporation-linux": {
+        "total": 37,
+        "unique": 9
+      },
+      "x86_64-Private Build-linux": {
+        "total": 3,
+        "unique": 1
+      },
+      "x86_64-Red Hat, Inc.-linux": {
+        "total": 8,
+        "unique": 4
+      },
+      "x86_64-Temurin-linux": {
+        "total": 3,
+        "unique": 1
+      },
+      "x86_64-Ubuntu-linux": {
+        "total": 10,
+        "unique": 3
+      },
+      "x86_64-alpine-linux-musl": {
+        "total": 17,
+        "unique": 4
+      },
+      "x86_64-apple-darwin13.4.0": {
+        "total": 1,
+        "unique": 1
+      },
+      "x86_64-apple-darwin14.5.0": {
+        "total": 12,
+        "unique": 2
+      },
+      "x86_64-apple-darwin15.6.0": {
+        "total": 8,
+        "unique": 3
+      },
+      "x86_64-apple-darwin16.7.0": {
+        "total": 5,
+        "unique": 3
+      },
+      "x86_64-apple-darwin17.7.0": {
+        "total": 5,
+        "unique": 1
+      },
+      "x86_64-apple-darwin18": {
+        "total": 3,
+        "unique": 2
+      },
+      "x86_64-apple-darwin18.6.0": {
+        "total": 5,
+        "unique": 2
+      },
+      "x86_64-apple-darwin18.7.0": {
+        "total": 2,
+        "unique": 1
+      },
+      "x86_64-apple-darwin19": {
+        "total": 65,
+        "unique": 15
+      },
+      "x86_64-apple-darwin19.3.0": {
+        "total": 1,
+        "unique": 1
+      },
+      "x86_64-apple-darwin19.4.0": {
+        "total": 2,
+        "unique": 1
+      },
+      "x86_64-apple-darwin19.5.0": {
+        "total": 1,
+        "unique": 1
+      },
+      "x86_64-apple-darwin19.6.0": {
+        "total": 18,
+        "unique": 4
+      },
+      "x86_64-apple-darwin20": {
+        "total": 69,
+        "unique": 25
+      },
+      "x86_64-apple-darwin20.1.0": {
+        "total": 1,
+        "unique": 1
+      },
+      "x86_64-apple-darwin20.5.0": {
+        "total": 3,
+        "unique": 1
+      },
+      "x86_64-apple-darwin20.6.0": {
+        "total": 31,
+        "unique": 15
+      },
+      "x86_64-apple-darwin21": {
+        "total": 9,
+        "unique": 5
+      },
+      "x86_64-apple-darwin21.1.0": {
+        "total": 9,
+        "unique": 2
+      },
+      "x86_64-apple-darwin21.2.0": {
+        "total": 5,
+        "unique": 2
+      },
+      "x86_64-apple-darwin21.3.0": {
+        "total": 1,
+        "unique": 1
+      },
+      "x86_64-cygwin": {
+        "total": 5,
+        "unique": 2
+      },
+      "x86_64-darwin-13": {
+        "total": 15,
+        "unique": 5
+      },
+      "x86_64-darwin-14": {
+        "total": 4,
+        "unique": 2
+      },
+      "x86_64-darwin-15": {
+        "total": 10,
+        "unique": 3
+      },
+      "x86_64-darwin-17": {
+        "total": 1,
+        "unique": 1
+      },
+      "x86_64-darwin-18": {
+        "total": 16,
+        "unique": 8
+      },
+      "x86_64-darwin-19": {
+        "total": 164,
+        "unique": 28
+      },
+      "x86_64-darwin-20": {
+        "total": 109,
+        "unique": 52
+      },
+      "x86_64-darwin-21": {
+        "total": 21,
+        "unique": 6
+      },
+      "x86_64-koji-linux-gnu": {
+        "total": 15,
+        "unique": 8
+      },
+      "x86_64-linux": {
+        "total": 29383,
+        "unique": 8338
+      },
+      "x86_64-linux-musl": {
+        "total": 57,
+        "unique": 7
+      },
+      "x86_64-pc-linux": {
+        "total": 2471,
+        "unique": 516
+      },
+      "x86_64-pc-linux-gnu": {
+        "total": 43658,
+        "unique": 16716
+      },
+      "x86_64-pc-linux-musl": {
+        "total": 61,
+        "unique": 31
+      },
+      "x86_64-redhat-linux": {
+        "total": 4,
+        "unique": 2
+      },
+      "x86_64-redhat-linux-gnu": {
+        "total": 6,
+        "unique": 2
+      },
+      "x86_64-solaris-2.11": {
+        "total": 4,
+        "unique": 2
+      },
+      "x86_64-unknown-freebsd10.3": {
+        "total": 43,
+        "unique": 8
+      },
+      "x86_64-unknown-freebsd11.3": {
+        "total": 1,
+        "unique": 1
+      },
+      "x86_64-unknown-freebsd11.4": {
+        "total": 2,
+        "unique": 1
+      },
+      "x86_64-unknown-linux": {
+        "total": 1,
+        "unique": 1
+      },
+      "x86_64-unknown-linux-gnu": {
+        "total": 89,
+        "unique": 42
+      },
+      "x86_64-w64-mingw32": {
+        "total": 3228,
+        "unique": 1402
+      }
+    },
+    "ruby": {
+      "1.8.7": {
+        "total": 52,
+        "unique": 26
+      },
+      "1.9.3": {
+        "total": 379,
+        "unique": 182
+      },
+      "2.0.0": {
+        "total": 1456,
+        "unique": 441
+      },
+      "2.1.0": {
+        "total": 4,
+        "unique": 2
+      },
+      "2.1.1": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.1.10": {
+        "total": 266,
+        "unique": 77
+      },
+      "2.1.2": {
+        "total": 4,
+        "unique": 1
+      },
+      "2.1.3": {
+        "total": 11,
+        "unique": 2
+      },
+      "2.1.4": {
+        "total": 52,
+        "unique": 18
+      },
+      "2.1.5": {
+        "total": 34,
+        "unique": 4
+      },
+      "2.1.6": {
+        "total": 1254,
+        "unique": 420
+      },
+      "2.1.7": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.1.8": {
+        "total": 292,
+        "unique": 38
+      },
+      "2.1.9": {
+        "total": 140,
+        "unique": 64
+      },
+      "2.2.0": {
+        "total": 21,
+        "unique": 4
+      },
+      "2.2.10": {
+        "total": 15,
+        "unique": 3
+      },
+      "2.2.2": {
+        "total": 50,
+        "unique": 21
+      },
+      "2.2.3": {
+        "total": 18,
+        "unique": 7
+      },
+      "2.2.4": {
+        "total": 46,
+        "unique": 14
+      },
+      "2.2.5": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.2.6": {
+        "total": 13,
+        "unique": 4
+      },
+      "2.2.7": {
+        "total": 39,
+        "unique": 19
+      },
+      "2.2.8": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.2.9": {
+        "total": 3,
+        "unique": 1
+      },
+      "2.3.0": {
+        "total": 972,
+        "unique": 421
+      },
+      "2.3.1": {
+        "total": 7730,
+        "unique": 3157
+      },
+      "2.3.3": {
+        "total": 2588,
+        "unique": 663
+      },
+      "2.3.4": {
+        "total": 118,
+        "unique": 55
+      },
+      "2.3.5": {
+        "total": 3484,
+        "unique": 1136
+      },
+      "2.3.6": {
+        "total": 21210,
+        "unique": 5113
+      },
+      "2.3.7": {
+        "total": 72,
+        "unique": 27
+      },
+      "2.3.8": {
+        "total": 199,
+        "unique": 46
+      },
+      "2.4.0": {
+        "total": 25,
+        "unique": 12
+      },
+      "2.4.1": {
+        "total": 204,
+        "unique": 47
+      },
+      "2.4.10": {
+        "total": 398,
+        "unique": 54
+      },
+      "2.4.2": {
+        "total": 736,
+        "unique": 297
+      },
+      "2.4.3": {
+        "total": 1045,
+        "unique": 401
+      },
+      "2.4.4": {
+        "total": 926,
+        "unique": 256
+      },
+      "2.4.5": {
+        "total": 1503,
+        "unique": 678
+      },
+      "2.4.6": {
+        "total": 11,
+        "unique": 2
+      },
+      "2.4.7": {
+        "total": 1023,
+        "unique": 120
+      },
+      "2.4.9": {
+        "total": 85,
+        "unique": 32
+      },
+      "2.5.0": {
+        "total": 52,
+        "unique": 19
+      },
+      "2.5.1": {
+        "total": 3621,
+        "unique": 1343
+      },
+      "2.5.2": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.5.3": {
+        "total": 6836,
+        "unique": 1935
+      },
+      "2.5.4": {
+        "total": 9,
+        "unique": 3
+      },
+      "2.5.5": {
+        "total": 2378,
+        "unique": 784
+      },
+      "2.5.7": {
+        "total": 2390,
+        "unique": 852
+      },
+      "2.5.8": {
+        "total": 1072,
+        "unique": 321
+      },
+      "2.5.9": {
+        "total": 264,
+        "unique": 132
+      },
+      "2.6.0": {
+        "total": 16,
+        "unique": 4
+      },
+      "2.6.1": {
+        "total": 236,
+        "unique": 112
+      },
+      "2.6.2": {
+        "total": 59,
+        "unique": 24
+      },
+      "2.6.3": {
+        "total": 1524,
+        "unique": 324
+      },
+      "2.6.4": {
+        "total": 96,
+        "unique": 13
+      },
+      "2.6.5": {
+        "total": 5671,
+        "unique": 2036
+      },
+      "2.6.6": {
+        "total": 1358,
+        "unique": 497
+      },
+      "2.6.7": {
+        "total": 651,
+        "unique": 287
+      },
+      "2.6.8": {
+        "total": 844,
+        "unique": 139
+      },
+      "2.6.9": {
+        "total": 179,
+        "unique": 36
+      },
+      "2.7.0": {
+        "total": 518,
+        "unique": 201
+      },
+      "2.7.1": {
+        "total": 1082,
+        "unique": 450
+      },
+      "2.7.2": {
+        "total": 1827,
+        "unique": 756
+      },
+      "2.7.3": {
+        "total": 788,
+        "unique": 167
+      },
+      "2.7.4": {
+        "total": 845,
+        "unique": 353
+      },
+      "2.7.5": {
+        "total": 2089,
+        "unique": 418
+      },
+      "3.0.0": {
+        "total": 18,
+        "unique": 9
+      },
+      "3.0.1": {
+        "total": 560,
+        "unique": 250
+      },
+      "3.0.2": {
+        "total": 768,
+        "unique": 325
+      },
+      "3.0.3": {
+        "total": 308,
+        "unique": 79
+      },
+      "3.1.0": {
+        "total": 50,
+        "unique": 12
+      },
+      "3.2.0": {
+        "total": 2,
+        "unique": 1
+      }
+    },
+    "rubygems": {
+      "1.3.7": {
+        "total": 46,
+        "unique": 23
+      },
+      "1.6.2": {
+        "total": 2,
+        "unique": 1
+      },
+      "1.8.11": {
+        "total": 3,
+        "unique": 1
+      },
+      "1.8.23": {
+        "total": 85,
+        "unique": 42
+      },
+      "1.8.23.2": {
+        "total": 1,
+        "unique": 1
+      },
+      "1.8.24": {
+        "total": 15,
+        "unique": 6
+      },
+      "1.8.28": {
+        "total": 1,
+        "unique": 1
+      },
+      "1.8.29": {
+        "total": 17,
+        "unique": 7
+      },
+      "1.8.30": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.0.14": {
+        "total": 27,
+        "unique": 4
+      },
+      "2.0.14.1": {
+        "total": 1280,
+        "unique": 152
+      },
+      "2.1.11": {
+        "total": 36,
+        "unique": 16
+      },
+      "2.2.0": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.2.2": {
+        "total": 104,
+        "unique": 19
+      },
+      "2.2.5": {
+        "total": 86,
+        "unique": 26
+      },
+      "2.4.3": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.4.4": {
+        "total": 241,
+        "unique": 108
+      },
+      "2.4.5": {
+        "total": 3,
+        "unique": 1
+      },
+      "2.4.5.1": {
+        "total": 41,
+        "unique": 7
+      },
+      "2.4.5.2": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.4.5.3": {
+        "total": 3,
+        "unique": 1
+      },
+      "2.4.5.4": {
+        "total": 3,
+        "unique": 1
+      },
+      "2.4.5.5": {
+        "total": 6,
+        "unique": 3
+      },
+      "2.4.7": {
+        "total": 45,
+        "unique": 6
+      },
+      "2.4.8": {
+        "total": 954,
+        "unique": 119
+      },
+      "2.4.8.1.acquia": {
+        "total": 9,
+        "unique": 3
+      },
+      "2.5.1": {
+        "total": 248,
+        "unique": 103
+      },
+      "2.5.2": {
+        "total": 473,
+        "unique": 157
+      },
+      "2.5.2.1": {
+        "total": 2666,
+        "unique": 1262
+      },
+      "2.5.2.2": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.5.2.3": {
+        "total": 140,
+        "unique": 39
+      },
+      "2.6.0": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.6.10": {
+        "total": 1300,
+        "unique": 638
+      },
+      "2.6.11": {
+        "total": 732,
+        "unique": 265
+      },
+      "2.6.12": {
+        "total": 188,
+        "unique": 68
+      },
+      "2.6.13": {
+        "total": 2844,
+        "unique": 767
+      },
+      "2.6.14": {
+        "total": 24933,
+        "unique": 11294
+      },
+      "2.6.14.1": {
+        "total": 37,
+        "unique": 9
+      },
+      "2.6.14.3": {
+        "total": 4,
+        "unique": 1
+      },
+      "2.6.14.4": {
+        "total": 1248,
+        "unique": 541
+      },
+      "2.6.2": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.6.3": {
+        "total": 46,
+        "unique": 19
+      },
+      "2.6.4": {
+        "total": 83,
+        "unique": 36
+      },
+      "2.6.6": {
+        "total": 1454,
+        "unique": 426
+      },
+      "2.6.7": {
+        "total": 622,
+        "unique": 239
+      },
+      "2.6.8": {
+        "total": 4030,
+        "unique": 1039
+      },
+      "2.7.0": {
+        "total": 202,
+        "unique": 73
+      },
+      "2.7.10": {
+        "total": 106,
+        "unique": 45
+      },
+      "2.7.11": {
+        "total": 197,
+        "unique": 30
+      },
+      "2.7.3": {
+        "total": 222,
+        "unique": 45
+      },
+      "2.7.4": {
+        "total": 4,
+        "unique": 2
+      },
+      "2.7.5": {
+        "total": 2,
+        "unique": 1
+      },
+      "2.7.6": {
+        "total": 9481,
+        "unique": 4295
+      },
+      "2.7.6.1": {
+        "total": 1,
+        "unique": 1
+      },
+      "2.7.6.2": {
+        "total": 1341,
+        "unique": 456
+      },
+      "2.7.6.3": {
+        "total": 211,
+        "unique": 47
+      },
+      "2.7.7": {
+        "total": 267,
+        "unique": 58
+      },
+      "2.7.8": {
+        "total": 499,
+        "unique": 188
+      },
+      "2.7.9": {
+        "total": 5552,
+        "unique": 2647
+      },
+      "3.0.0": {
+        "total": 86,
+        "unique": 41
+      },
+      "3.0.1": {
+        "total": 56,
+        "unique": 22
+      },
+      "3.0.2": {
+        "total": 9,
+        "unique": 2
+      },
+      "3.0.3": {
+        "total": 7521,
+        "unique": 2813
+      },
+      "3.0.3.1": {
+        "total": 1172,
+        "unique": 560
+      },
+      "3.0.4": {
+        "total": 715,
+        "unique": 286
+      },
+      "3.0.6": {
+        "total": 793,
+        "unique": 248
+      },
+      "3.0.8": {
+        "total": 335,
+        "unique": 40
+      },
+      "3.0.9": {
+        "total": 78,
+        "unique": 37
+      },
+      "3.1.1": {
+        "total": 1,
+        "unique": 1
+      },
+      "3.1.2": {
+        "total": 1573,
+        "unique": 581
+      },
+      "3.1.3": {
+        "total": 144,
+        "unique": 17
+      },
+      "3.1.4": {
+        "total": 1831,
+        "unique": 911
+      },
+      "3.1.6": {
+        "total": 3173,
+        "unique": 879
+      },
+      "3.2.11": {
+        "total": 11,
+        "unique": 2
+      },
+      "3.2.12": {
+        "total": 1,
+        "unique": 1
+      },
+      "3.2.15": {
+        "total": 565,
+        "unique": 199
+      },
+      "3.2.16": {
+        "total": 16,
+        "unique": 8
+      },
+      "3.2.17": {
+        "total": 13,
+        "unique": 3
+      },
+      "3.2.18": {
+        "total": 1,
+        "unique": 1
+      },
+      "3.2.19": {
+        "total": 1,
+        "unique": 1
+      },
+      "3.2.2": {
+        "total": 15,
+        "unique": 4
+      },
+      "3.2.20": {
+        "total": 441,
+        "unique": 203
+      },
+      "3.2.21": {
+        "total": 1,
+        "unique": 1
+      },
+      "3.2.22": {
+        "total": 777,
+        "unique": 191
+      },
+      "3.2.24": {
+        "total": 5,
+        "unique": 1
+      },
+      "3.2.25": {
+        "total": 2,
+        "unique": 1
+      },
+      "3.2.26": {
+        "total": 4,
+        "unique": 1
+      },
+      "3.2.27": {
+        "total": 11,
+        "unique": 2
+      },
+      "3.2.28": {
+        "total": 9,
+        "unique": 2
+      },
+      "3.2.29": {
+        "total": 6,
+        "unique": 3
+      },
+      "3.2.3": {
+        "total": 21,
+        "unique": 8
+      },
+      "3.2.30": {
+        "total": 10,
+        "unique": 5
+      },
+      "3.2.31": {
+        "total": 100,
+        "unique": 41
+      },
+      "3.2.32": {
+        "total": 495,
+        "unique": 140
+      },
+      "3.2.33": {
+        "total": 20,
+        "unique": 10
+      },
+      "3.2.4": {
+        "total": 1,
+        "unique": 1
+      },
+      "3.2.5": {
+        "total": 51,
+        "unique": 14
+      },
+      "3.2.6": {
+        "total": 1,
+        "unique": 1
+      },
+      "3.2.7": {
+        "total": 9,
+        "unique": 5
+      },
+      "3.2.8": {
+        "total": 29,
+        "unique": 5
+      },
+      "3.3.0": {
+        "total": 2,
+        "unique": 1
+      },
+      "3.3.1": {
+        "total": 1,
+        "unique": 1
+      },
+      "3.3.3": {
+        "total": 47,
+        "unique": 8
+      },
+      "3.3.4": {
+        "total": 63,
+        "unique": 16
+      },
+      "3.3.5": {
+        "total": 53,
+        "unique": 15
+      },
+      "3.3.6": {
+        "total": 177,
+        "unique": 37
+      },
+      "3.4.0.dev": {
+        "total": 2,
+        "unique": 1
+      }
+    },
+    "server_region": {
+    },
+    "tls_cipher": {
+      "": {
+        "total": 464,
+        "unique": 116
+      },
+      "AES128-GCM": {
+        "total": 1625,
+        "unique": 202
+      },
+      "AES256-GCM": {
+        "total": 10072,
+        "unique": 1447
+      },
+      "ECDHE-RSA-AES128-GCM-SHA256": {
+        "total": 72325,
+        "unique": 10737
+      },
+      "ECDHE-RSA-AES128-SHA": {
+        "total": 101,
+        "unique": 40
+      },
+      "ECDHE-RSA-AES128-SHA256": {
+        "total": 93,
+        "unique": 11
+      }
+    }
+  }
+}
