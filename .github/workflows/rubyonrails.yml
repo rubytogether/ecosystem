@@ -25,6 +25,7 @@ jobs:
     env:
       RAILS_ENV: test
       DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
+      BUNDLE_GEMS__CONTRIBSYS__COM: "${{ secrets.BUNDLE_GEMS__CONTRIBSYS__COM }}"
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
