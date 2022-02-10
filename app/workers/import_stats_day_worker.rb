@@ -9,7 +9,14 @@ class ImportStatsDayWorker
       import_status_ids.push(is.id)
 
       is.data.each do |name, vv|
-        vv.each { |version, count| stats[name][version] += count }
+        vv.each do |version, count|
+          if count.is_a?(Hash)
+            stats[name][version] += count["total"]
+            stats["#{name}_unique"][version] += count["unique"]
+          else
+            stats[name][version] += count
+          end
+        end
       end
     end
 

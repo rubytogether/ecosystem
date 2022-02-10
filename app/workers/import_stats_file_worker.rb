@@ -8,12 +8,7 @@ class ImportStatsFileWorker
     bucket = Rails.application.config.stats.bucket_name
 
     body = s3.get_object(bucket: bucket, key: key).body.read
-    json = JSON.parse(body)
-
-    json.each do |date, data|
-      ImportStatus.create!(key: key, date: date, data: data)
-    end
-
+    ImportStatus.import(body)
     Rails.logger.info("Downloaded #{key}")
   end
 end
