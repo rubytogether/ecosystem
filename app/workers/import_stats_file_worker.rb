@@ -8,7 +8,7 @@ class ImportStatsFileWorker
     bucket = Rails.application.config.stats.bucket_name
 
     body = s3.get_object(bucket: bucket, key: key).body.read
-    ImportStatus.import(body)
+    ImportStatus.import(key, body)
     Rails.logger.info("Downloaded #{key}")
   end
 end
