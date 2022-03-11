@@ -60,6 +60,7 @@ class Stat < ApplicationRecord
     "ci" => :ci,
     "platform" => :platform
   }
+  BUCKETS.merge!(BUCKETS.transform_keys { |k| "#{k}_unique" })
 
   PLATFORMS = %w[linux mingw32 darwin java]
 
