@@ -65,7 +65,7 @@ class VersionsController < ApplicationController
 
   private
 
-  DEFAULT_LIMITS = { "platform" => 3 }
+  DEFAULT_LIMITS = { "ruby_unique" => 7 }
   DEFAULT_LIMITS.default = 5
   MAX_LIMIT = 25
 
