@@ -12,7 +12,9 @@ class ComparisonController < ApplicationController
 
     key1_points =
       dates.map do |date|
-        count = count_map.dig(date, key1) - count_map.dig(date, key2)
+        first = count_map.dig(date, key1) || 0
+        second = count_map.dig(date, key2) || 0
+        count = first - second
         y = count.to_f / count_map.dig(date, key1) * 100
         { x: date.strftime("%m/%d"), y: y }
       end
