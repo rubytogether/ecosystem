@@ -19,8 +19,10 @@ class ImportStatsWorker
     )
 
     if keys.size == 1000
+      Rails.logger.info "Re-running #{self.class} in 5 minutes"
       self.class.perform_in(5.minutes)
     else
+      Rails.logger.info "Running ImportStatsDaysWorker in 5 minutes"
       ImportStatsDaysWorker.perform_in(5.minutes)
     end
   end
