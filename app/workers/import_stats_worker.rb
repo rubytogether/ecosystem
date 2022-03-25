@@ -17,5 +17,11 @@ class ImportStatsWorker
     Sidekiq::Client.push_bulk(
       "class" => "ImportStatsFileWorker", "args" => keys.map { |k| [k] }
     )
+
+    if keys.size == 1000
+      self.class.perform_in(5.minutes)
+    else
+      ImportStatsDaysWorker.perform_in(5.minutes)
+    end
   end
 end
