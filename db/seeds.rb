@@ -2,11 +2,12 @@ require "csv"
 
 data_file = File.expand_path("seeds/stats.csv", __dir__)
 
+created_at = Time.now
+
 stats = []
-CSV.foreach(data_file) { |row| stats.push([row[0..2].join("-"), *row[3..-1]]) }
+CSV.foreach(data_file) { |row| stats.push([[created_at.year, *row[1..2]].join("-"), *row[3..-1]]) }
 stats.shift
 
-created_at = Time.now
 stat_values =
   stats.map do |s|
     s.push(created_at, created_at)
