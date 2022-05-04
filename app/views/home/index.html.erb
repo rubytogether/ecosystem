@@ -6,7 +6,7 @@
 
 <h3>Traffic Comparisons</h3>
 <p style="text-align:center;">
-  Group all traffic for relative comparison. In these graphs, "RubyGems" means <code>gem install</code> while "Bundler" means <code>bundle install</code>, and "CI" means Bundler found a value in the <code>CI</code> environment variable.
+  Group all traffic for relative comparison. In these graphs, "RubyGems" means <code>gem install</code> while "Bundler" means <code>bundle install</code>, and "Unknown" means Bundler found a value in the <code>CI</code> environment variable, but no other variable indicating the specific CI environment.
 </p>
 <%= render "charts", charts: @comparison_charts %>
 
