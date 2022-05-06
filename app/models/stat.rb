@@ -83,13 +83,16 @@ class Stat < ApplicationRecord
     # which one of the values to use
     Arel.sql(
       "CASE array_length(string_to_array(value, ','), 1)
-         WHEN 1 THEN value
+         WHEN 1 THEN CASE value
+          WHEN 'ci' THEN 'unknown'
+          ELSE value
+          END
          WHEN 2 THEN CASE (string_to_array(value, ','))[1]
            WHEN '' THEN (string_to_array(value, ','))[2]
            WHEN 'ci' THEN (string_to_array(value, ','))[2]
            ELSE (string_to_array(value, ','))[1]
            END
-         ELSE 'ci'
+         ELSE 'unknown'
        END
        AS ci"
     )
