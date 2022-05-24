@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby Pathname.new(".ruby-version").expand_path(__dir__).read
 
-gem "rails", "~> 5.2.3"
+gem "rails", "~> 6.0.0"
 
 gem "apexcharts"
 gem "aws-sdk-s3", "~> 1.46"
@@ -14,7 +14,7 @@ gem "lograge", "~> 0.11.2"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 4.1"
 gem "sidekiq", "~> 5.2"
-gem "webpacker", "~> 4.0"
+gem "webpacker", "~> 5.0"
 
 # Gems in both rubygems.org and gems.contribsys.com
 gem "redis"
