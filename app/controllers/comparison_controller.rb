@@ -19,8 +19,11 @@ class ComparisonController < ApplicationController
         { x: date.strftime("%m/%d"), y: y }
       end
 
+    key1_without_unique = key1.delete_suffix("_unique")
+    key2_without_unique = key2.delete_suffix("_unique")
+
     # TODO: Make this more general
-    key1_name = key1 == "bundler" && key2 == "ci" ? "Non-CI" : key1
+    key1_name = key1_without_unique == "bundler" && key2_without_unique == "ci" ? "Non-CI" : key1_without_unique
     key1_series = { name: key1_name, data: key1_points }
 
     key2_points =
@@ -30,7 +33,7 @@ class ComparisonController < ApplicationController
         { x: date.strftime("%m/%d"), y: y }
       end
 
-    key2_name = key2 == "ci" ? "CI" : key2
+    key2_name = key2_without_unique == "ci" ? "CI" : key2_without_unique
     key2_series = { name: key2_name, data: key2_points }
 
     @series = [key1_series, key2_series]
