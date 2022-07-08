@@ -6,8 +6,14 @@ GIT
       activerecord (>= 3.2.0)
 
 GEM
-  remote: https://rubygems.org/
   remote: https://gems.contribsys.com/
+  specs:
+    sidekiq-pro (4.0.5)
+      concurrent-ruby (>= 1.0.5)
+      sidekiq (>= 5.2.1)
+
+GEM
+  remote: https://rubygems.org/
   specs:
     actioncable (5.2.3)
       actionpack (= 5.2.3)
@@ -190,9 +196,6 @@ GEM
       rack (>= 1.5.0)
       rack-protection (>= 1.5.0)
       redis (>= 3.3.5, < 5)
-    sidekiq-pro (4.0.5)
-      concurrent-ruby (>= 1.0.5)
-      sidekiq (>= 5.2.1)
     smart_kv (0.2.7)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
@@ -250,4 +253,4 @@ RUBY VERSION
    ruby 2.7.5p203
 
 BUNDLED WITH
-   2.1.4
+   2.3.17
