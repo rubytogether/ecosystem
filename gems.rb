@@ -39,3 +39,4 @@ source "https://gems.contribsys.com/" do
 end
 
 gem "webrick", "~> 1.9"
+gem "psych", "< 4"
