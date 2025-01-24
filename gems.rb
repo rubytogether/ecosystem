@@ -37,3 +37,5 @@ end
 source "https://gems.contribsys.com/" do
   gem "sidekiq-pro"
 end
+
+gem "webrick", "~> 1.9"
